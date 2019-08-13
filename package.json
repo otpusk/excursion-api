@@ -1,0 +1,18 @@
+{
+  "name": "@otpusk/excursion-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "babel-node src/playground.js",
+    "build": "babel src --out-dir dist --copy-files"
+  },
+  "author": "Oleksandr Fishchenko",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
+  }
+}
