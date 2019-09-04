@@ -53,6 +53,7 @@ function _call() {
         body,
         request,
         response,
+        data,
         _args = arguments;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -82,9 +83,10 @@ function _call() {
             return response.json();
 
           case 9:
-            return _context.abrupt("return", _context.sent);
+            data = _context.sent;
+            return _context.abrupt("return", data);
 
-          case 10:
+          case 11:
           case "end":
             return _context.stop();
         }

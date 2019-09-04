@@ -1,7 +1,7 @@
-import { getMainpage} from './index.js';
+import { getFilterDeparture } from './index.js';
 
-getMainpage().then(
-    payload => {
-        console.log(payload);
+getFilterDeparture().then(
+    (payload) => {
+        console.log('payload', payload);
     }
 );

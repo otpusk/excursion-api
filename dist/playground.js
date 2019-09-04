@@ -2,6 +2,6 @@
 
 var _index = require("./index.js");
 
-(0, _index.getMainpage)().then(function (payload) {
-  console.log(payload);
+(0, _index.getFilterDeparture)().then(function (payload) {
+  console.log('payload', payload);
 });

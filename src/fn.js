@@ -13,18 +13,20 @@ function createQueryStringFromObject (params) {
         .join('&');
 }
 
-async function call(endpoint, { query = {}, body = null } = {}) {
+async function call (endpoint, { query = {}, body = null } = {}) {
     const request = `${endpoint}?${createQueryStringFromObject(query)}`;
     const response = await fetch(request, {
         method: body ? 'POST' : 'GET',
-        body: body
-    })
+        body,
+    });
 
     if (response.status >= 300) {
         throw new Error(`Error while performing request ${endpoint}`);
     }
 
-    return await response.json();
+    const data = await response.json();
+
+    return data;
 }
 
 export { call };
