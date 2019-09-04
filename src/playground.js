@@ -1,7 +1,9 @@
 import { getFilterDeparture } from './index.js';
 
-getFilterDeparture().then(
-    (payload) => {
-        console.log('payload', payload);
-    }
-);
+async function main () {
+    const departures = await getFilterDeparture();
+
+    console.log('departures', departures);
+}
+
+main();
