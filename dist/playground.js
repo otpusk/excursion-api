@@ -14,17 +14,17 @@ function _main() {
   _main = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
-    var departures;
+    var tours;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _index.getFilterDeparture)();
+            return (0, _index.getSearch)();
 
           case 2:
-            departures = _context.sent;
-            console.log('departures', departures);
+            tours = _context.sent;
+            console.log('departures', JSON.stringify(tours));
 
           case 4:
           case "end":

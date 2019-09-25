@@ -27,6 +27,12 @@ Object.defineProperty(exports, "getFilterDeparture", {
     return _filter.getFilterDeparture;
   }
 });
+Object.defineProperty(exports, "getSearch", {
+  enumerable: true,
+  get: function get() {
+    return _search.getSearch;
+  }
+});
 
 var _mainpage = require("./methods/mainpage");
 
@@ -35,3 +41,5 @@ var _countries = require("./methods/countries");
 var _suggest = require("./methods/suggest");
 
 var _filter = require("./methods/filter");
+
+var _search = require("./methods/search");

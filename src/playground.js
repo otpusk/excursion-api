@@ -1,9 +1,9 @@
-import { getFilterDeparture } from './index.js';
+import { getSearch } from './index.js';
 
 async function main () {
-    const departures = await getFilterDeparture();
+    const tours = await getSearch();
 
-    console.log('departures', departures);
+    console.log('departures', JSON.stringify(tours));
 }
 
 main();

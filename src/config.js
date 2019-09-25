@@ -6,6 +6,7 @@ const endpoints = Object.freeze({
     countries:       `${host}/excursions/countries`,
     suggest:         `${host}/excursions/suggest`,
     filterDeparture: `${host}/excursions/filter/departure`,
+    search:          `${host}/excursions/search`,
 });
 
 export { endpoints };
