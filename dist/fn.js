@@ -87,7 +87,7 @@ function createQueryStringFromObject(params) {
     return getConverter(value)(query, [key, value]);
   };
 
-  return Object.entries(params).reduce(convertParam, []);
+  return Object.entries(params).reduce(convertParam, []).join('&');
 }
 
 function call(_x) {
@@ -122,24 +122,23 @@ function _call() {
 
           case 4:
             response = _context.sent;
-            console.log(createQueryStringFromObject(query));
 
             if (!(response.status >= 300)) {
-              _context.next = 8;
+              _context.next = 7;
               break;
             }
 
             throw new Error("Error while performing request ".concat(endpoint));
 
-          case 8:
-            _context.next = 10;
+          case 7:
+            _context.next = 9;
             return response.json();
 
-          case 10:
+          case 9:
             data = _context.sent;
             return _context.abrupt("return", data);
 
-          case 12:
+          case 11:
           case "end":
             return _context.stop();
         }

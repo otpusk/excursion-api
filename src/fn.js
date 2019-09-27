@@ -37,9 +37,9 @@ function createQueryStringFromObject (params) {
         return getConverter(value)(query, [key, value]);
     };
 
-
     return Object.entries(params)
-        .reduce(convertParam, []);
+        .reduce(convertParam, [])
+        .join('&');
 }
 
 async function call (endpoint, { query = {}, body = null } = {}) {
@@ -48,8 +48,6 @@ async function call (endpoint, { query = {}, body = null } = {}) {
         method: body ? 'POST' : 'GET',
         body,
     });
-
-    console.log(createQueryStringFromObject(query));
 
     if (response.status >= 300) {
         throw new Error(`Error while performing request ${endpoint}`);
