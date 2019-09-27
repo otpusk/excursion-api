@@ -8,9 +8,38 @@ import fetch from 'isomorphic-fetch';
  * @returns {string} query stirng
  */
 function createQueryStringFromObject (params) {
+    const convertScalar = (query, [k, v]) =>
+        [...query, `${k}=${encodeURIComponent(v)}`];
+    const convertArray = (query, [k, v]) => [
+        ...query,
+        ...v.map((entry) => `${k}[]=${encodeURIComponent(entry)}`)
+    ];
+
+    const convertObject = (query, [key, value]) => {
+        let nextQuery = query;
+
+        for (const [sk, sv] of Object.entries(value)) {
+            nextQuery = getConverter(sv)(nextQuery, [`${key}[${sk}]`, sv]);
+        }
+
+        return nextQuery;
+    };
+
+    const getConverter = (v) => {
+        return typeof v !== 'object'
+            ? convertScalar
+            : Array.isArray(v)
+                ? convertArray
+                : convertObject;
+    };
+
+    const convertParam = (query, [key, value]) => {
+        return getConverter(value)(query, [key, value]);
+    };
+
+
     return Object.entries(params)
-        .map(([k, v]) => `${k}=${encodeURIComponent(v)}`)
-        .join('&');
+        .reduce(convertParam, []);
 }
 
 async function call (endpoint, { query = {}, body = null } = {}) {
@@ -19,6 +48,8 @@ async function call (endpoint, { query = {}, body = null } = {}) {
         method: body ? 'POST' : 'GET',
         body,
     });
+
+    console.log(createQueryStringFromObject(query));
 
     if (response.status >= 300) {
         throw new Error(`Error while performing request ${endpoint}`);

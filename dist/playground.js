@@ -20,13 +20,12 @@ function _main() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _index.getSearch)();
+            return (0, _index.getSearch)({});
 
           case 2:
             tours = _context.sent;
-            console.log('departures', JSON.stringify(tours));
 
-          case 4:
+          case 3:
           case "end":
             return _context.stop();
         }
