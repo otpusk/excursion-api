@@ -27,6 +27,30 @@ Object.defineProperty(exports, "getFilterDeparture", {
     return _filter.getFilterDeparture;
   }
 });
+Object.defineProperty(exports, "getFilterTransport", {
+  enumerable: true,
+  get: function get() {
+    return _filter.getFilterTransport;
+  }
+});
+Object.defineProperty(exports, "getFilterCategories", {
+  enumerable: true,
+  get: function get() {
+    return _filter.getFilterCategories;
+  }
+});
+Object.defineProperty(exports, "getFilterPrice", {
+  enumerable: true,
+  get: function get() {
+    return _filter.getFilterPrice;
+  }
+});
+Object.defineProperty(exports, "getFilterOperators", {
+  enumerable: true,
+  get: function get() {
+    return _filter.getFilterOperators;
+  }
+});
 Object.defineProperty(exports, "getSearch", {
   enumerable: true,
   get: function get() {

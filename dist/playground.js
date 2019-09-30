@@ -14,18 +14,56 @@ function _main() {
   _main = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
-    var tours;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return (0, _index.getSearch)({});
-
-          case 2:
-            tours = _context.sent;
+            _context.t0 = console;
+            _context.next = 3;
+            return (0, _index.getFilterDeparture)();
 
           case 3:
+            _context.t1 = _context.sent;
+
+            _context.t0.log.call(_context.t0, _context.t1);
+
+            _context.t2 = console;
+            _context.next = 8;
+            return (0, _index.getFilterTransport)();
+
+          case 8:
+            _context.t3 = _context.sent;
+
+            _context.t2.log.call(_context.t2, _context.t3);
+
+            _context.t4 = console;
+            _context.next = 13;
+            return (0, _index.getFilterCategories)();
+
+          case 13:
+            _context.t5 = _context.sent;
+
+            _context.t4.log.call(_context.t4, _context.t5);
+
+            _context.t6 = console;
+            _context.next = 18;
+            return (0, _index.getFilterPrice)();
+
+          case 18:
+            _context.t7 = _context.sent;
+
+            _context.t6.log.call(_context.t6, _context.t7);
+
+            _context.t8 = console;
+            _context.next = 23;
+            return (0, _index.getFilterOperators)();
+
+          case 23:
+            _context.t9 = _context.sent;
+
+            _context.t8.log.call(_context.t8, _context.t9);
+
+          case 25:
           case "end":
             return _context.stop();
         }

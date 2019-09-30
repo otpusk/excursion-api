@@ -1,7 +1,12 @@
-import { getSearch } from './index.js';
+import { getFilterDeparture, getFilterTransport, getFilterCategories,
+    getFilterPrice, getFilterOperators } from './index.js';
 
 async function main () {
-    const tours = await getSearch({});
+    console.log(await getFilterDeparture());
+    console.log(await getFilterTransport());
+    console.log(await getFilterCategories());
+    console.log(await getFilterPrice());
+    console.log(await getFilterOperators());
 }
 
 main();
