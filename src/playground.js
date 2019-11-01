@@ -7,6 +7,7 @@ async function main () {
     console.log(await getFilterCategories());
     console.log(await getFilterPrice());
     console.log(await getFilterOperators());
+    console.log(await getSearchCount({}));
 }
 
 main();
