@@ -19,6 +19,7 @@ var endpoints = Object.freeze({
   filterCategories: "".concat(host, "/excursions/filter/categories"),
   filterPrice: "".concat(host, "/excursions/filter/price"),
   filterOperators: "".concat(host, "/excursions/filter/operators"),
-  search: "".concat(host, "/excursions/search")
+  search: "".concat(host, "/excursions/search"),
+  searchCount: "".concat(host, "/excursions/searchcount")
 });
 exports.endpoints = endpoints;

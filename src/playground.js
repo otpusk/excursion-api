@@ -1,5 +1,5 @@
 import { getFilterDeparture, getFilterTransport, getFilterCategories,
-    getFilterPrice, getFilterOperators } from './index.js';
+    getFilterPrice, getFilterOperators, getSearchCount } from './index.js';
 
 async function main () {
     console.log(await getFilterDeparture());

@@ -6,3 +6,4 @@ export {
     getFilterPrice, getFilterOperators
 } from './methods/filter';
 export { getSearch } from './methods/search';
+export { getSearchCount } from './methods/searchCount';
