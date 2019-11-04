@@ -11,6 +11,7 @@ const endpoints = Object.freeze({
     filterPrice:      `${host}/excursions/filter/price`,
     filterOperators:  `${host}/excursions/filter/operators`,
     search:           `${host}/excursions/search`,
+    searchCount:      `${host}/excursions/searchcount`,
 });
 
 export { endpoints };

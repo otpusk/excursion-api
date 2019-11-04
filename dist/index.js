@@ -57,6 +57,12 @@ Object.defineProperty(exports, "getSearch", {
     return _search.getSearch;
   }
 });
+Object.defineProperty(exports, "getSearchCount", {
+  enumerable: true,
+  get: function get() {
+    return _search.getSearchCount;
+  }
+});
 
 var _mainpage = require("./methods/mainpage");
 

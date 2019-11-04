@@ -5,4 +5,4 @@ export {
     getFilterDeparture, getFilterTransport, getFilterCategories,
     getFilterPrice, getFilterOperators
 } from './methods/filter';
-export { getSearch } from './methods/search';
+export { getSearch, getSearchCount } from './methods/search';

@@ -63,7 +63,16 @@ function _main() {
 
             _context.t8.log.call(_context.t8, _context.t9);
 
-          case 25:
+            _context.t10 = console;
+            _context.next = 28;
+            return (0, _index.getSearchCount)({});
+
+          case 28:
+            _context.t11 = _context.sent;
+
+            _context.t10.log.call(_context.t10, _context.t11);
+
+          case 30:
           case "end":
             return _context.stop();
         }
