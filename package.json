@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "babel-node src/playground.js",
-    "build": "babel src --out-dir dist --copy-files"
+    "transpile": "babel src --out-dir dist --copy-files",
+    "publish": "npm publish"
   },
   "author": "Oleksandr Fishchenko",
   "license": "ISC",
