@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.getSearch = getSearch;
+exports.getSearchCount = getSearchCount;
 
 var _config = require("../config");
 
@@ -43,4 +44,36 @@ function _getSearch() {
     }, _callee);
   }));
   return _getSearch.apply(this, arguments);
+}
+
+function getSearchCount(_x2) {
+  return _getSearchCount.apply(this, arguments);
+}
+
+function _getSearchCount() {
+  _getSearchCount = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee2(query) {
+    var searchCount;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return (0, _fn.call)(_config.endpoints.searchCount, {
+              query: query
+            });
+
+          case 2:
+            searchCount = _context2.sent;
+            return _context2.abrupt("return", searchCount);
+
+          case 4:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _getSearchCount.apply(this, arguments);
 }

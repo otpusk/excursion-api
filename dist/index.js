@@ -60,7 +60,7 @@ Object.defineProperty(exports, "getSearch", {
 Object.defineProperty(exports, "getSearchCount", {
   enumerable: true,
   get: function get() {
-    return _searchCount.getSearchCount;
+    return _search.getSearchCount;
   }
 });
 
@@ -73,5 +73,3 @@ var _suggest = require("./methods/suggest");
 var _filter = require("./methods/filter");
 
 var _search = require("./methods/search");
-
-var _searchCount = require("./methods/searchCount");
