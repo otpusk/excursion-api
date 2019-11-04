@@ -6,3 +6,9 @@ export async function getSearch (query) {
 
     return tours;
 }
+
+export async function getSearchCount (query) {
+    const searchCount = await call(endpoints.searchCount, { query });
+
+    return searchCount;
+}
