@@ -5,4 +5,5 @@ export {
     getFilterDeparture, getFilterTransport, getFilterCategories,
     getFilterPrice, getFilterOperators
 } from './methods/filter';
+export { getExcursion } from './methods/excursion';
 export { getSearch, getSearchCount } from './methods/search';
