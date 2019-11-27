@@ -72,7 +72,16 @@ function _main() {
 
             _context.t10.log.call(_context.t10, _context.t11);
 
-          case 30:
+            _context.t12 = console;
+            _context.next = 33;
+            return (0, _index.getExcursion)(68831);
+
+          case 33:
+            _context.t13 = _context.sent;
+
+            _context.t12.log.call(_context.t12, _context.t13);
+
+          case 35:
           case "end":
             return _context.stop();
         }

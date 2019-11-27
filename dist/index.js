@@ -51,6 +51,12 @@ Object.defineProperty(exports, "getFilterOperators", {
     return _filter.getFilterOperators;
   }
 });
+Object.defineProperty(exports, "getExcursion", {
+  enumerable: true,
+  get: function get() {
+    return _excursion.getExcursion;
+  }
+});
 Object.defineProperty(exports, "getSearch", {
   enumerable: true,
   get: function get() {
@@ -71,5 +77,7 @@ var _countries = require("./methods/countries");
 var _suggest = require("./methods/suggest");
 
 var _filter = require("./methods/filter");
+
+var _excursion = require("./methods/excursion");
 
 var _search = require("./methods/search");
