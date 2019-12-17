@@ -7,6 +7,8 @@ exports.call = call;
 
 var _isomorphicFetch = _interopRequireDefault(require("isomorphic-fetch"));
 
+var _fetchJsonp = _interopRequireDefault(require("fetch-jsonp"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -103,7 +105,10 @@ function _call() {
         query,
         _ref9$body,
         body,
+        _ref9$jsonp,
+        jsonp,
         request,
+        fetchfn,
         response,
         data,
         _args = arguments;
@@ -112,33 +117,34 @@ function _call() {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _ref9 = _args.length > 1 && _args[1] !== undefined ? _args[1] : {}, _ref9$query = _ref9.query, query = _ref9$query === void 0 ? {} : _ref9$query, _ref9$body = _ref9.body, body = _ref9$body === void 0 ? null : _ref9$body;
+            _ref9 = _args.length > 1 && _args[1] !== undefined ? _args[1] : {}, _ref9$query = _ref9.query, query = _ref9$query === void 0 ? {} : _ref9$query, _ref9$body = _ref9.body, body = _ref9$body === void 0 ? null : _ref9$body, _ref9$jsonp = _ref9.jsonp, jsonp = _ref9$jsonp === void 0 ? false : _ref9$jsonp;
             request = "".concat(endpoint, "?").concat(createQueryStringFromObject(query));
-            _context.next = 4;
-            return (0, _isomorphicFetch["default"])(request, {
+            fetchfn = jsonp ? _fetchJsonp["default"] : _isomorphicFetch["default"];
+            _context.next = 5;
+            return fetchfn(request, {
               method: body ? 'POST' : 'GET',
               body: body
             });
 
-          case 4:
+          case 5:
             response = _context.sent;
 
             if (!(response.status >= 300)) {
-              _context.next = 7;
+              _context.next = 8;
               break;
             }
 
             throw new Error("Error while performing request ".concat(endpoint));
 
-          case 7:
-            _context.next = 9;
+          case 8:
+            _context.next = 10;
             return response.json();
 
-          case 9:
+          case 10:
             data = _context.sent;
             return _context.abrupt("return", data);
 
-          case 11:
+          case 12:
           case "end":
             return _context.stop();
         }

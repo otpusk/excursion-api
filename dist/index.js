@@ -69,6 +69,12 @@ Object.defineProperty(exports, "getSearchCount", {
     return _search.getSearchCount;
   }
 });
+Object.defineProperty(exports, "getAgencies", {
+  enumerable: true,
+  get: function get() {
+    return _agencies.getAgencies;
+  }
+});
 
 var _mainpage = require("./methods/mainpage");
 
@@ -81,3 +87,5 @@ var _filter = require("./methods/filter");
 var _excursion = require("./methods/excursion");
 
 var _search = require("./methods/search");
+
+var _agencies = require("./methods/agencies");
