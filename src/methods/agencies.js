@@ -1,7 +1,7 @@
 import { endpoints } from '../config';
-import { call, createQueryStringFromObject } from '../fn';
+import { call } from '../fn';
 
-export async function getAgencies(query) {
+export async function getAgencies({ token, params }) {
 
     /*
      * Алгоритм нормализации агенств с эндпоинта export.otpusk.com/api/escursions/agency
@@ -17,9 +17,9 @@ export async function getAgencies(query) {
      * адрес - объект офиса, поле address
      * телефоны - объект офиса, поля fPhone1 - fPhone3
      * координаты - объект офиса, поля lat и lng
-     */
+    */
 
-    const rawData = await call(endpoints.getAgencies, { query, jsonp: true });
+    const rawData = await call(endpoints.getAgencies, { query: { ...params, access_token: token }, jsonp: true });
 
     const offices =
         // take all operators
@@ -41,5 +41,5 @@ export async function getAgencies(query) {
                 });
             });
 
-    console.log(offices);
+    return offices;
 }

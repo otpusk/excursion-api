@@ -62,4 +62,4 @@ async function call (endpoint, { query = {}, body = null, jsonp = false} = {}) {
     return data;
 }
 
-export { call, createQueryStringFromObject };
+export { call };
