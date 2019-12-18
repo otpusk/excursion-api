@@ -15,7 +15,9 @@ export async function getAgencies({ token, params }) {
      * url - объекта агенства, поле url
      * район (или метро) - объект офиса, поле rn
      * адрес - объект офиса, поле address
-     * телефоны - объект офиса, поля fPhone1 - fPhone3
+     * телефоны - объект офиса, поля fPhone1 - fPhone3,
+     * фотография офиса - объект офиса, поле facade
+     * есть ли у телефонов вайбер - объект офиса , поля phoneViber1 - phoneViber3
      * координаты - объект офиса, поля lat и lng
     */
 
@@ -34,10 +36,22 @@ export async function getAgencies({ token, params }) {
                 const { title = null, url = null } = agency;
                 // return array of offices with proper normalizing
                 return Object.values(agency.offices).map(office => {
-                    const { rn: district = null, address = null, lat, lng } = office;
-                    const rawPhones = [office.fPhone1, office.fPhone2, office.fPhone3];
-                    const phones = rawPhones.filter(phone => !!phone).map(phone => phone.replace(/[-() &nbsp;]/g, ''));
-                    return { title, url, district, address, phones, lat: Number(lat), lng: Number(lng) };
+                    const { rn: district = null, address = null, lat, lng, facade = null } = office;
+
+                    const rawContacts = [
+                        { phone: office.fPhone1, hasViber: office.phoneViber1 || false },
+                        { phone: office.fPhone2, hasViber: office.phoneViber2 || false },
+                        { phone: office.fPhone3, hasViber: office.phoneViber3 || false }
+                    ];
+
+                    const contacts = rawContacts
+                        .filter(contact => !!contact.phone)
+                        .map(contact => ({
+                            phone: contact.phone.replace(/[-() &nbsp;]/g, ''),
+                            hasViber: contact.hasViber,
+                        }));
+
+                    return { title, url, district, address, contacts, lat: Number(lat), lng: Number(lng), facade };
                 });
             });
 

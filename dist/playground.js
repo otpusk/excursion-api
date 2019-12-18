@@ -33,8 +33,9 @@ function _main() {
 
           case 2:
             data = _context.sent;
+            console.log(JSON.stringify(data));
 
-          case 3:
+          case 4:
           case "end":
             return _context.stop();
         }
