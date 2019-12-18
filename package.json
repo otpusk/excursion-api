@@ -6,7 +6,7 @@
   "scripts": {
     "start": "babel-node src/playground.js",
     "transpile": "babel src --out-dir dist --copy-files",
-    "publish": "npm publish"
+    "publish-package": "npm publish"
   },
   "author": "Oleksandr Fishchenko",
   "license": "ISC",
