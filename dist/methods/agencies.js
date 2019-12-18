@@ -69,21 +69,36 @@ function _getAgencies() {
                     _office$address = office.address,
                     address = _office$address === void 0 ? null : _office$address,
                     lat = office.lat,
-                    lng = office.lng;
-                var rawPhones = [office.fPhone1, office.fPhone2, office.fPhone3];
-                var phones = rawPhones.filter(function (phone) {
-                  return !!phone;
-                }).map(function (phone) {
-                  return phone.replace(/[-() &nbsp;]/g, '');
+                    lng = office.lng,
+                    _office$facade = office.facade,
+                    facade = _office$facade === void 0 ? null : _office$facade;
+                var rawContacts = [{
+                  phone: office.fPhone1,
+                  hasViber: office.phoneViber1 || false
+                }, {
+                  phone: office.fPhone2,
+                  hasViber: office.phoneViber2 || false
+                }, {
+                  phone: office.fPhone3,
+                  hasViber: office.phoneViber3 || false
+                }];
+                var contacts = rawContacts.filter(function (contact) {
+                  return !!contact.phone;
+                }).map(function (contact) {
+                  return {
+                    phone: contact.phone.replace(/[-() &nbsp;]/g, ''),
+                    hasViber: contact.hasViber
+                  };
                 });
                 return {
                   title: title,
                   url: url,
                   district: district,
                   address: address,
-                  phones: phones,
+                  contacts: contacts,
                   lat: Number(lat),
-                  lng: Number(lng)
+                  lng: Number(lng),
+                  facade: facade
                 };
               });
             });
