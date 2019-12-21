@@ -1,7 +1,7 @@
 import { endpoints } from '../config';
 import { call } from '../fn';
 
-export async function getAgencies({ token, params }) {
+export async function getAgencies ({ token, params }) {
 
     /*
      * Алгоритм нормализации агенств с эндпоинта export.otpusk.com/api/escursions/agency
@@ -19,24 +19,26 @@ export async function getAgencies({ token, params }) {
      * фотография офиса - объект офиса, поле facade
      * есть ли у телефонов вайбер - объект офиса , поля phoneViber1 - phoneViber3
      * координаты - объект офиса, поля lat и lng
+     * время работы - объект оффиса, поле workingTime
     */
 
-    const rawData = await call(endpoints.getAgencies, { query: { ...params, access_token: token }, jsonp: true });
+    const rawData = await call(endpoints.getAgencies, { query: { ...params, 'access_token': token }, jsonp: true });
 
     const offices =
         // take all operators
         Object.values(rawData.operators)
             // return list of all agencies from viewAgencies and clickAgencies
-            .flatMap(operator => {
+            .flatMap((operator) => {
                 return [...Object.values(operator.viewAgencies), ...Object.values(operator.clickAgencies)];
             })
             // return list of all offices
-            .flatMap(agency => {
+            .flatMap((agency) => {
                 // get title and url from agency
                 const { title = null, url = null } = agency;
                 // return array of offices with proper normalizing
-                return Object.values(agency.offices).map(office => {
-                    const { rn: district = null, address = null, lat, lng, facade = null } = office;
+
+                return Object.values(agency.offices).map((office) => {
+                    const { rn: district = null, address = null, lat, lng, facade = null, workingTime = null } = office;
 
                     const rawContacts = [
                         { phone: office.fPhone1, hasViber: office.phoneViber1 || false },
@@ -45,15 +47,34 @@ export async function getAgencies({ token, params }) {
                     ];
 
                     const contacts = rawContacts
-                        .filter(contact => !!contact.phone)
-                        .map(contact => ({
-                            phone: contact.phone.replace(/[-() &nbsp;]/g, ''),
+                        .filter((contact) => Boolean(contact.phone))
+                        .map((contact) => ({
+                            phone:    contact.phone.replace(/[-() &nbsp;]/g, ''),
                             hasViber: contact.hasViber,
                         }));
 
-                    return { title, url, district, address, contacts, lat: Number(lat), lng: Number(lng), facade };
+                    return {
+                        title,
+                        url,
+                        district,
+                        address,
+                        contacts,
+                        lat: Number(lat),
+                        lng: Number(lng),
+                        facade,
+                        workingTime,
+                    };
                 });
             });
 
-    return offices;
+    const regions = rawData.regions;
+
+    return { offices, regions };
+}
+
+export async function getDistricts ({ token, placeId }) {
+    const response = await call(endpoints.getDistricts, { query: { placeId, 'access_token': token }, jsonp: true });
+    const districts = response.regions;
+
+    return districts;
 }
