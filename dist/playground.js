@@ -14,7 +14,7 @@ function _main() {
   _main = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
-    var data, districts;
+    var data;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -35,16 +35,8 @@ function _main() {
 
           case 2:
             data = _context.sent;
-            _context.next = 5;
-            return (0, _index.getDistricts)({
-              token: '1b204-25f04-4b78c-0b089-e27ea',
-              placeId: 1
-            });
 
-          case 5:
-            districts = _context.sent;
-
-          case 6:
+          case 3:
           case "end":
             return _context.stop();
         }

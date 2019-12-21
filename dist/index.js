@@ -75,12 +75,6 @@ Object.defineProperty(exports, "getAgencies", {
     return _ads.getAgencies;
   }
 });
-Object.defineProperty(exports, "getDistricts", {
-  enumerable: true,
-  get: function get() {
-    return _ads.getDistricts;
-  }
-});
 
 var _mainpage = require("./methods/mainpage");
 

@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.getAgencies = getAgencies;
-exports.getDistricts = getDistricts;
 
 var _config = require("../config");
 
@@ -120,42 +119,4 @@ function _getAgencies() {
     }, _callee);
   }));
   return _getAgencies.apply(this, arguments);
-}
-
-function getDistricts(_x2) {
-  return _getDistricts.apply(this, arguments);
-}
-
-function _getDistricts() {
-  _getDistricts = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee2(_ref2) {
-    var token, placeId, response, districts;
-    return regeneratorRuntime.wrap(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            token = _ref2.token, placeId = _ref2.placeId;
-            _context2.next = 3;
-            return (0, _fn.call)(_config.endpoints.getDistricts, {
-              query: {
-                placeId: placeId,
-                'access_token': token
-              },
-              jsonp: true
-            });
-
-          case 3:
-            response = _context2.sent;
-            districts = response.regions;
-            return _context2.abrupt("return", districts);
-
-          case 6:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    }, _callee2);
-  }));
-  return _getDistricts.apply(this, arguments);
 }
