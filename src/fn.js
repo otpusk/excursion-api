@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import fetchJsonp  from 'fetch-jsonp';
+import fetchJsonp from 'fetch-jsonp';
 
 /**
  * Convert object to ulr query string
@@ -43,7 +43,7 @@ function createQueryStringFromObject (params) {
         .join('&');
 }
 
-async function call (endpoint, { query = {}, body = null, jsonp = false} = {}) {
+async function call (endpoint, { query = {}, body = null, jsonp = false } = {}) {
     const request = `${endpoint}?${createQueryStringFromObject(query)}`;
 
     const fetchfn = jsonp ? fetchJsonp : fetch;
