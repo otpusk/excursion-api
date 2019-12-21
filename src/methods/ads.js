@@ -71,10 +71,3 @@ export async function getAgencies ({ token, params }) {
 
     return { offices, regions };
 }
-
-export async function getDistricts ({ token, placeId }) {
-    const response = await call(endpoints.getDistricts, { query: { placeId, 'access_token': token }, jsonp: true });
-    const districts = response.regions;
-
-    return districts;
-}

@@ -7,4 +7,4 @@ export {
 } from './methods/filter';
 export { getExcursion } from './methods/excursion';
 export { getSearch, getSearchCount } from './methods/search';
-export { getAgencies, getDistricts } from './methods/ads';
+export { getAgencies } from './methods/ads';

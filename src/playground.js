@@ -1,6 +1,5 @@
 import {
-    getAgencies,
-    getDistricts
+    getAgencies
 } from './index.js';
 
 async function main () {
@@ -16,8 +15,6 @@ async function main () {
             hash:       '',
         },
     });
-
-    const districts = await getDistricts({ token: '1b204-25f04-4b78c-0b089-e27ea', placeId: 1 });
 }
 
 main();
