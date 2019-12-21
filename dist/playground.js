@@ -14,7 +14,7 @@ function _main() {
   _main = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
-    var data;
+    var data, districts;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -23,19 +23,28 @@ function _main() {
             return (0, _index.getAgencies)({
               token: '1b204-25f04-4b78c-0b089-e27ea',
               params: {
-                cruiseId: 47658,
-                date: '2019-12-20',
-                variantId: 2025100319,
-                cityFrom: 1815,
-                deptCity: 1397
+                cruiseId: 40671,
+                date: '2019-12-28',
+                operatorId: 465,
+                variantId: 2022263105,
+                cityFrom: '1',
+                deptCity: '1397',
+                hash: ''
               }
             });
 
           case 2:
             data = _context.sent;
-            console.log(JSON.stringify(data));
+            _context.next = 5;
+            return (0, _index.getDistricts)({
+              token: '1b204-25f04-4b78c-0b089-e27ea',
+              placeId: 1
+            });
 
-          case 4:
+          case 5:
+            districts = _context.sent;
+
+          case 6:
           case "end":
             return _context.stop();
         }
