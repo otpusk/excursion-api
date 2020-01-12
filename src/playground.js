@@ -1,9 +1,9 @@
 import {
-    getCity
+    getCategory
 } from './index.js';
 
 async function main () {
-    const data = await getCity('spain', 'barselona');
+    const data = await getCategory('popular-cities');
 
     console.log(data);
 }

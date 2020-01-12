@@ -87,6 +87,12 @@ Object.defineProperty(exports, "getCity", {
     return _geo.getCity;
   }
 });
+Object.defineProperty(exports, "getCategory", {
+  enumerable: true,
+  get: function get() {
+    return _category.getCategory;
+  }
+});
 
 var _mainpage = require("./methods/mainpage");
 
@@ -103,3 +109,5 @@ var _search = require("./methods/search");
 var _ads = require("./methods/ads");
 
 var _geo = require("./methods/geo");
+
+var _category = require("./methods/category");
