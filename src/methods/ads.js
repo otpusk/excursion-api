@@ -12,6 +12,10 @@ export async function getAgencies ({ token, params }) {
      * агенства. В них есть поля offices - объекты офисов.
      *
      * Название для офиса берём из - объекта агенства, поле title
+     * advertId - обьект агенства
+     * agencyId - обьект агенства
+     * officeId - обьект офиса
+     * zoom - обьект офиса, необходимо для отображения на карте
      * url - объекта агенства, поле url
      * район (или метро) - объект офиса, поле rn
      * адрес - объект офиса, поле address
@@ -34,11 +38,11 @@ export async function getAgencies ({ token, params }) {
             // return list of all offices
             .flatMap((agency) => {
                 // get title and url from agency
-                const { title = null, url = null } = agency;
+                const { title = null, url = null, advertId = null, agencyId = null } = agency;
                 // return array of offices with proper normalizing
 
                 return Object.values(agency.offices).map((office) => {
-                    const { rn: district = null, address = null, lat, lng, facade = null, workingTime = null } = office;
+                    const { rn: district = null, address = null, lat, lng, facade = null, workingTime = null, zoom = null, officeId } = office;
 
                     const rawContacts = [
                         { phone: office.fPhone1, hasViber: office.phoneViber1 || false },
@@ -56,11 +60,15 @@ export async function getAgencies ({ token, params }) {
                     return {
                         title,
                         url,
+                        officeId: Number(officeId),
+                        advertId: Number(advertId),
+                        agencyId: Number(agencyId),
                         district,
                         address,
                         contacts,
-                        lat: Number(lat),
-                        lng: Number(lng),
+                        lat:      Number(lat),
+                        lng:      Number(lng),
+                        zoom:     Number(zoom),
                         facade,
                         workingTime,
                     };

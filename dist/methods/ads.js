@@ -61,7 +61,11 @@ function _getAgencies() {
               var _agency$title = agency.title,
                   title = _agency$title === void 0 ? null : _agency$title,
                   _agency$url = agency.url,
-                  url = _agency$url === void 0 ? null : _agency$url; // return array of offices with proper normalizing
+                  url = _agency$url === void 0 ? null : _agency$url,
+                  _agency$advertId = agency.advertId,
+                  advertId = _agency$advertId === void 0 ? null : _agency$advertId,
+                  _agency$agencyId = agency.agencyId,
+                  agencyId = _agency$agencyId === void 0 ? null : _agency$agencyId; // return array of offices with proper normalizing
 
               return Object.values(agency.offices).map(function (office) {
                 var _office$rn = office.rn,
@@ -73,7 +77,10 @@ function _getAgencies() {
                     _office$facade = office.facade,
                     facade = _office$facade === void 0 ? null : _office$facade,
                     _office$workingTime = office.workingTime,
-                    workingTime = _office$workingTime === void 0 ? null : _office$workingTime;
+                    workingTime = _office$workingTime === void 0 ? null : _office$workingTime,
+                    _office$zoom = office.zoom,
+                    zoom = _office$zoom === void 0 ? null : _office$zoom,
+                    officeId = office.officeId;
                 var rawContacts = [{
                   phone: office.fPhone1,
                   hasViber: office.phoneViber1 || false
@@ -95,11 +102,15 @@ function _getAgencies() {
                 return {
                   title: title,
                   url: url,
+                  officeId: Number(officeId),
+                  advertId: Number(advertId),
+                  agencyId: Number(agencyId),
                   district: district,
                   address: address,
                   contacts: contacts,
                   lat: Number(lat),
                   lng: Number(lng),
+                  zoom: Number(zoom),
                   facade: facade,
                   workingTime: workingTime
                 };
