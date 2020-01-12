@@ -23,6 +23,8 @@ var endpoints = Object.freeze({
   search: "".concat(host, "/excursions/search"),
   searchCount: "".concat(host, "/excursions/searchcount"),
   getExcursion: "".concat(host, "/excursions/get_excursion"),
+  getCountry: "".concat(host, "/geo/country"),
+  getCity: "".concat(host, "/geo/city"),
   getAgencies: "".concat(otpusk, "/excursions/agency")
 });
 exports.endpoints = endpoints;

@@ -8,3 +8,4 @@ export {
 export { getExcursion } from './methods/excursion';
 export { getSearch, getSearchCount } from './methods/search';
 export { getAgencies } from './methods/ads';
+export { getCountry, getCity } from './methods/geo';

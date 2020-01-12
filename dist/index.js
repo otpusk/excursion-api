@@ -75,6 +75,18 @@ Object.defineProperty(exports, "getAgencies", {
     return _ads.getAgencies;
   }
 });
+Object.defineProperty(exports, "getCountry", {
+  enumerable: true,
+  get: function get() {
+    return _geo.getCountry;
+  }
+});
+Object.defineProperty(exports, "getCity", {
+  enumerable: true,
+  get: function get() {
+    return _geo.getCity;
+  }
+});
 
 var _mainpage = require("./methods/mainpage");
 
@@ -89,3 +101,5 @@ var _excursion = require("./methods/excursion");
 var _search = require("./methods/search");
 
 var _ads = require("./methods/ads");
+
+var _geo = require("./methods/geo");

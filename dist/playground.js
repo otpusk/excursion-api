@@ -20,23 +20,13 @@ function _main() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _index.getAgencies)({
-              token: '1b204-25f04-4b78c-0b089-e27ea',
-              params: {
-                cruiseId: 40671,
-                date: '2019-12-28',
-                operatorId: 465,
-                variantId: 2022263105,
-                cityFrom: '1',
-                deptCity: '1397',
-                hash: ''
-              }
-            });
+            return (0, _index.getCity)('spain', 'barselona');
 
           case 2:
             data = _context.sent;
+            console.log(data);
 
-          case 3:
+          case 4:
           case "end":
             return _context.stop();
         }
