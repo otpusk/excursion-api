@@ -21,7 +21,6 @@ export async function getExcursion (excursion) {
             days[index].description = escapeHtml(dayDescription);
         }
 
-        console.log(day);
     });
 
     return tour;

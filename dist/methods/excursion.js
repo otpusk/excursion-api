@@ -47,8 +47,6 @@ function _getExcursion() {
               if (dayDescription) {
                 days[index].description = (0, _helpers.escapeHtml)(dayDescription);
               }
-
-              console.log(day);
             });
             return _context.abrupt("return", tour);
 

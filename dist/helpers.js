@@ -23,10 +23,10 @@ function escapeHtml(unsafe) {
     unicode: '&#039;'
   }, {
     "char": '«',
-    unicode: '&#187;'
+    unicode: '&#171;'
   }, {
     "char": '»',
-    unicode: '&#171;'
+    unicode: '&#187;'
   }];
   return unsafeCharacters.reduce(function (acc, _ref) {
     var _char = _ref["char"],
