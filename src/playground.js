@@ -1,11 +1,11 @@
 import {
-    getCategory
+    getExcursion
 } from './index.js';
 
 async function main () {
-    const data = await getCategory('popular-cities');
+    const data = await getExcursion(69675);
 
-    console.log(data);
+    // console.log(data);
 }
 
 main();
