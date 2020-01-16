@@ -65,7 +65,9 @@ function _getAgencies() {
                   _agency$advertId = agency.advertId,
                   advertId = _agency$advertId === void 0 ? null : _agency$advertId,
                   _agency$agencyId = agency.agencyId,
-                  agencyId = _agency$agencyId === void 0 ? null : _agency$agencyId; // return array of offices with proper normalizing
+                  agencyId = _agency$agencyId === void 0 ? null : _agency$agencyId,
+                  _agency$logoBigFile = agency.logoBigFile,
+                  agencyLogo = _agency$logoBigFile === void 0 ? null : _agency$logoBigFile; // return array of offices with proper normalizing
 
               return Object.values(agency.offices).map(function (office) {
                 var _office$rn = office.rn,
@@ -112,7 +114,8 @@ function _getAgencies() {
                   lng: Number(lng),
                   zoom: Number(zoom),
                   facade: facade,
-                  workingTime: workingTime
+                  workingTime: workingTime,
+                  agencyLogo: "https://www.otpusk.com/logos/".concat(agencyLogo)
                 };
               });
             });

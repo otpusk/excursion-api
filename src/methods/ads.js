@@ -24,6 +24,7 @@ export async function getAgencies ({ token, params }) {
      * есть ли у телефонов вайбер - объект офиса , поля phoneViber1 - phoneViber3
      * координаты - объект офиса, поля lat и lng
      * время работы - объект оффиса, поле workingTime
+     * логотип - обьект агенства, поле logoBigFile
     */
 
     const rawData = await call(endpoints.getAgencies, { query: { ...params, 'access_token': token }, jsonp: true });
@@ -38,7 +39,7 @@ export async function getAgencies ({ token, params }) {
             // return list of all offices
             .flatMap((agency) => {
                 // get title and url from agency
-                const { title = null, url = null, advertId = null, agencyId = null } = agency;
+                const { title = null, url = null, advertId = null, agencyId = null, logoBigFile : agencyLogo = null } = agency;
                 // return array of offices with proper normalizing
 
                 return Object.values(agency.offices).map((office) => {
@@ -60,17 +61,18 @@ export async function getAgencies ({ token, params }) {
                     return {
                         title,
                         url,
-                        officeId: Number(officeId),
-                        advertId: Number(advertId),
-                        agencyId: Number(agencyId),
+                        officeId:   Number(officeId),
+                        advertId:   Number(advertId),
+                        agencyId:   Number(agencyId),
                         district,
                         address,
                         contacts,
-                        lat:      Number(lat),
-                        lng:      Number(lng),
-                        zoom:     Number(zoom),
+                        lat:        Number(lat),
+                        lng:        Number(lng),
+                        zoom:       Number(zoom),
                         facade,
                         workingTime,
+                        agencyLogo: `https://www.otpusk.com/logos/${agencyLogo}`,
                     };
                 });
             });
