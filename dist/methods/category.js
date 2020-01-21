@@ -27,7 +27,12 @@ function _getCategory() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _fn.call)("".concat(_config.endpoints.getCategory, "/").concat(alias));
+            return (0, _fn.call)(_config.endpoints.getCategory, {
+              body: true,
+              query: {
+                alias: alias
+              }
+            });
 
           case 2:
             data = _context.sent;
