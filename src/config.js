@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 
 const host = Cookies.get('excursion-api-host') || 'https://new.otpusk.com/api';
-const otpusk = 'https://export.otpusk.com/api';
+const otpusk = 'http://export.otpusk.tomazov.dev08.odev.io/api';
 
 const endpoints = Object.freeze({
     mainpage:         `${host}/excursions/mainpage`,

@@ -10,7 +10,7 @@ var _jsCookie = _interopRequireDefault(require("js-cookie"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var host = _jsCookie["default"].get('excursion-api-host') || 'https://new.otpusk.com/api';
-var otpusk = 'https://export.otpusk.com/api';
+var otpusk = 'http://export.otpusk.tomazov.dev08.odev.io/api';
 var endpoints = Object.freeze({
   mainpage: "".concat(host, "/excursions/mainpage"),
   countries: "".concat(host, "/excursions/countries"),
