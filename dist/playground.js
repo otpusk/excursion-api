@@ -20,7 +20,16 @@ function _main() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _index.getCategory)('/excursion/c-catholic-christmas/');
+            return (0, _index.getAgencies)({
+              params: {
+                cruiseId: 69055,
+                date: '2020-05-28',
+                variantId: 2018229,
+                deptCity: 1397,
+                operatorId: 464
+              },
+              token: '1b204-25f04-4b78c-0b089-e27ea'
+            });
 
           case 2:
             data = _context.sent;

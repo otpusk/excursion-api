@@ -82,7 +82,9 @@ function _getAgencies() {
                     workingTime = _office$workingTime === void 0 ? null : _office$workingTime,
                     _office$zoom = office.zoom,
                     zoom = _office$zoom === void 0 ? null : _office$zoom,
-                    officeId = office.officeId;
+                    officeId = office.officeId,
+                    _office$city = office.city,
+                    city = _office$city === void 0 ? null : _office$city;
                 var rawContacts = [{
                   phone: office.fPhone1,
                   hasViber: office.phoneViber1 || false
@@ -115,6 +117,7 @@ function _getAgencies() {
                   zoom: Number(zoom),
                   facade: facade,
                   workingTime: workingTime,
+                  city: Number(city),
                   agencyLogo: "https://www.otpusk.com/logos/".concat(agencyLogo)
                 };
               });

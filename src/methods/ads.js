@@ -23,8 +23,9 @@ export async function getAgencies ({ token, params }) {
      * фотография офиса - объект офиса, поле facade
      * есть ли у телефонов вайбер - объект офиса , поля phoneViber1 - phoneViber3
      * координаты - объект офиса, поля lat и lng
-     * время работы - объект оффиса, поле workingTime
+     * время работы - объект офиса, поле workingTime
      * логотип - обьект агенства, поле logoBigFile
+     * город - обьект офиса, поле сity
     */
 
     const rawData = await call(endpoints.getAgencies, { query: { ...params, 'access_token': token }, jsonp: true });
@@ -43,7 +44,7 @@ export async function getAgencies ({ token, params }) {
                 // return array of offices with proper normalizing
 
                 return Object.values(agency.offices).map((office) => {
-                    const { rn: district = null, address = null, lat, lng, facade = null, workingTime = null, zoom = null, officeId } = office;
+                    const { rn: district = null, address = null, lat, lng, facade = null, workingTime = null, zoom = null, officeId, city = null } = office;
 
                     const rawContacts = [
                         { phone: office.fPhone1, hasViber: office.phoneViber1 || false },
@@ -72,6 +73,7 @@ export async function getAgencies ({ token, params }) {
                         zoom:       Number(zoom),
                         facade,
                         workingTime,
+                        city:       Number(city),
                         agencyLogo: `https://www.otpusk.com/logos/${agencyLogo}`,
                     };
                 });
