@@ -18,6 +18,7 @@ const endpoints = Object.freeze({
     getCountry:       `${host}/geo/country`,
     getCity:          `${host}/geo/city`,
     getCategory:      `${host}/excursions/category`,
+    getLocationsInfo: `${host}/excursions/locations_info`,
     getAgencies:      `${otpusk}/excursions/agency`,
 });
 

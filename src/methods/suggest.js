@@ -6,3 +6,10 @@ export async function getSuggest (word = '') {
 
     return data;
 }
+
+export async function getLocationsInfo ({ countries = [], cities = [], sights = []}) {
+    // locations - { countries: string[], cities: string[], sights: string[] }
+    const data = await call(endpoints.getLocationsInfo, { body: true, query: { countries, cities, sights }});
+
+    return data;
+}

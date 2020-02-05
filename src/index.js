@@ -1,6 +1,6 @@
 export { getMainpage } from './methods/mainpage';
 export { getCountries } from './methods/countries';
-export { getSuggest } from './methods/suggest';
+export { getSuggest, getLocationsInfo } from './methods/suggest';
 export {
     getFilterDeparture, getFilterTransport, getFilterCategories,
     getFilterPrice, getFilterOperators

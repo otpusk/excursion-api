@@ -21,6 +21,12 @@ Object.defineProperty(exports, "getSuggest", {
     return _suggest.getSuggest;
   }
 });
+Object.defineProperty(exports, "getLocationsInfo", {
+  enumerable: true,
+  get: function get() {
+    return _suggest.getLocationsInfo;
+  }
+});
 Object.defineProperty(exports, "getFilterDeparture", {
   enumerable: true,
   get: function get() {
