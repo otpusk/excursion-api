@@ -23,7 +23,7 @@ function _getExcursion() {
   _getExcursion = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee(excursion) {
-    var tour, _tour$excursion, description, days;
+    var tour, _tour$excursion, description, days, showplaces;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -35,10 +35,17 @@ function _getExcursion() {
           case 2:
             tour = _context.sent;
             // escaping unsafe characters in html response
-            _tour$excursion = tour.excursion, description = _tour$excursion.description, days = _tour$excursion.days;
+            _tour$excursion = tour.excursion, description = _tour$excursion.description, days = _tour$excursion.days, showplaces = _tour$excursion.showplaces;
             Object.keys(description).forEach(function (key) {
               if (description[key]) {
                 description[key] = (0, _helpers.escapeHtml)(description[key]);
+              }
+            });
+            showplaces.forEach(function (_ref, index) {
+              var showplaceDescription = _ref.description;
+
+              if (showplaceDescription) {
+                showplaces[index].description = (0, _helpers.escapeHtml)(showplaceDescription);
               }
             });
             days.forEach(function (day, index) {
@@ -50,7 +57,7 @@ function _getExcursion() {
             });
             return _context.abrupt("return", tour);
 
-          case 7:
+          case 8:
           case "end":
             return _context.stop();
         }
