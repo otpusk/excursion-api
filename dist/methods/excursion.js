@@ -48,12 +48,12 @@ function _getExcursion() {
                 showplaces[index].description = (0, _helpers.escapeHtml)(showplaceDescription);
               }
             });
-            days.forEach(function (day, index) {
-              var dayDescription = day.description;
-
-              if (dayDescription) {
-                days[index].description = (0, _helpers.escapeHtml)(dayDescription);
-              }
+            days.forEach(function (day) {
+              Object.keys(day).forEach(function (key) {
+                if (typeof day[key] === 'string') {
+                  day[key] = (0, _helpers.escapeHtml)(day[key]);
+                }
+              });
             });
             return _context.abrupt("return", tour);
 

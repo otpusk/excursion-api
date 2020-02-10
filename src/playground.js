@@ -3,7 +3,12 @@ import {
 } from './index.js';
 
 async function main () {
-    const data = await getExcursion(69996);
+    try {
+        const data = await getExcursion(69824);
+
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 main();

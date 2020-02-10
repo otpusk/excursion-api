@@ -20,12 +20,13 @@ export async function getExcursion (excursion) {
         }
     });
 
-    days.forEach((day, index) => {
-        const { description : dayDescription } = day;
+    days.forEach((day) => {
 
-        if (dayDescription) {
-            days[index].description = escapeHtml(dayDescription);
-        }
+        Object.keys(day).forEach((key) => {
+            if (typeof day[key] === 'string') {
+                day[key] = escapeHtml(day[key]);
+            }
+        });
 
     });
 
