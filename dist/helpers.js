@@ -29,10 +29,10 @@ function escapeHtml(unsafe) {
     unicode: '&#187;'
   }, {
     "char": '\n',
-    unicode: '&#13;'
+    unicode: '<br>'
   }, {
     "char": '\r',
-    unicode: '&#13;'
+    unicode: '<br>'
   }];
   return unsafeCharacters.reduce(function (acc, _ref) {
     var _char = _ref["char"],
