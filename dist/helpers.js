@@ -27,6 +27,12 @@ function escapeHtml(unsafe) {
   }, {
     "char": '»',
     unicode: '&#187;'
+  }, {
+    "char": '\r\n',
+    unicode: '&lt;br&gt;'
+  }, {
+    "char": '\n',
+    unicode: '&lt;br&gt;'
   }];
   return unsafeCharacters.reduce(function (acc, _ref) {
     var _char = _ref["char"],
