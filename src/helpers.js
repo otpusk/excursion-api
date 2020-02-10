@@ -7,8 +7,8 @@ export function escapeHtml (unsafe) {
         { char: "'", unicode: '&#039;' },
         { char: '«', unicode: '&#171;' },
         { char: '»', unicode: '&#187;' },
-        { char: '\n', unicode: '&lt;br&gt;' },
-        { char: '\r', unicode: '&lt;br&gt;' }
+        { char: '\r\n', unicode: '&lt;br&gt;' },
+        { char: '\n', unicode: '&lt;br&gt;' }
     ];
 
     return unsafeCharacters.reduce((acc, { char, unicode }) => {
