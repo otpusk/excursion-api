@@ -23,7 +23,7 @@ function _getExcursion() {
   _getExcursion = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee(excursion) {
-    var tour, _tour$excursion, description, days, showplaces;
+    var tour, _tour$excursion, _tour$excursion$descr, description, _tour$excursion$days, days, _tour$excursion$showp, showplaces;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -35,7 +35,7 @@ function _getExcursion() {
           case 2:
             tour = _context.sent;
             // escaping unsafe characters in html response
-            _tour$excursion = tour.excursion, description = _tour$excursion.description, days = _tour$excursion.days, showplaces = _tour$excursion.showplaces;
+            _tour$excursion = tour.excursion, _tour$excursion$descr = _tour$excursion.description, description = _tour$excursion$descr === void 0 ? {} : _tour$excursion$descr, _tour$excursion$days = _tour$excursion.days, days = _tour$excursion$days === void 0 ? [] : _tour$excursion$days, _tour$excursion$showp = _tour$excursion.showplaces, showplaces = _tour$excursion$showp === void 0 ? [] : _tour$excursion$showp;
             description && Object.keys(description).forEach(function (key) {
               if (description[key]) {
                 description[key] = (0, _helpers.escapeHtml)(description[key]);

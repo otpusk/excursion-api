@@ -6,7 +6,7 @@ export async function getExcursion (excursion) {
     const tour = await call(`${endpoints.getExcursion}/${excursion}`);
 
     // escaping unsafe characters in html response
-    const { excursion : { description, days, showplaces }} = tour;
+    const { excursion : { description = {}, days = [], showplaces = []}} = tour;
 
     description && Object.keys(description).forEach((key) => {
         if (description[key]) {
