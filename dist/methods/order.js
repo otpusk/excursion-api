@@ -28,7 +28,8 @@ function _sendExcursionOrder() {
           case 0:
             _context.next = 2;
             return (0, _fn.call)(_config.endpoints.sendExcursionOrder, {
-              body: order
+              body: order,
+              jsonp: true
             });
 
           case 2:
