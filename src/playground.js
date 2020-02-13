@@ -4,7 +4,7 @@ import {
 
 async function main () {
     try {
-        const data = await getExcursion(69824);
+        const data = await getExcursion(70125);
 
     } catch (err) {
         console.log(err);

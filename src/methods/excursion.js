@@ -8,19 +8,19 @@ export async function getExcursion (excursion) {
     // escaping unsafe characters in html response
     const { excursion : { description, days, showplaces }} = tour;
 
-    Object.keys(description).forEach((key) => {
+    description && Object.keys(description).forEach((key) => {
         if (description[key]) {
             description[key] = escapeHtml(description[key]);
         }
     });
 
-    showplaces.forEach(({ description : showplaceDescription }, index) => {
+    showplaces && showplaces.forEach(({ description : showplaceDescription }, index) => {
         if (showplaceDescription) {
             showplaces[index].description = escapeHtml(showplaceDescription);
         }
     });
 
-    days.forEach((day) => {
+    days && days.forEach((day) => {
 
         Object.keys(day).forEach((key) => {
             if (typeof day[key] === 'string') {

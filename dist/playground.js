@@ -21,7 +21,7 @@ function _main() {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return (0, _index.getExcursion)(69824);
+            return (0, _index.getExcursion)(70125);
 
           case 3:
             data = _context.sent;

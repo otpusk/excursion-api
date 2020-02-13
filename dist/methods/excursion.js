@@ -36,19 +36,19 @@ function _getExcursion() {
             tour = _context.sent;
             // escaping unsafe characters in html response
             _tour$excursion = tour.excursion, description = _tour$excursion.description, days = _tour$excursion.days, showplaces = _tour$excursion.showplaces;
-            Object.keys(description).forEach(function (key) {
+            description && Object.keys(description).forEach(function (key) {
               if (description[key]) {
                 description[key] = (0, _helpers.escapeHtml)(description[key]);
               }
             });
-            showplaces.forEach(function (_ref, index) {
+            showplaces && showplaces.forEach(function (_ref, index) {
               var showplaceDescription = _ref.description;
 
               if (showplaceDescription) {
                 showplaces[index].description = (0, _helpers.escapeHtml)(showplaceDescription);
               }
             });
-            days.forEach(function (day) {
+            days && days.forEach(function (day) {
               Object.keys(day).forEach(function (key) {
                 if (typeof day[key] === 'string') {
                   day[key] = (0, _helpers.escapeHtml)(day[key]);
