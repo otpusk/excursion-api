@@ -99,6 +99,12 @@ Object.defineProperty(exports, "getCategory", {
     return _category.getCategory;
   }
 });
+Object.defineProperty(exports, "sendExcursionOrder", {
+  enumerable: true,
+  get: function get() {
+    return _order.sendExcursionOrder;
+  }
+});
 
 var _mainpage = require("./methods/mainpage");
 
@@ -117,3 +123,5 @@ var _ads = require("./methods/ads");
 var _geo = require("./methods/geo");
 
 var _category = require("./methods/category");
+
+var _order = require("./methods/order");
