@@ -10,7 +10,8 @@ var _jsCookie = _interopRequireDefault(require("js-cookie"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var host = _jsCookie["default"].get('excursion-api-host') || 'https://new.otpusk.com/api';
-var otpusk = 'https://export.otpusk.com/api';
+var exportOtpusk = 'https://export.otpusk.com/api';
+var otpusk = 'https://www.otpusk.com';
 var endpoints = Object.freeze({
   mainpage: "".concat(host, "/excursions/mainpage"),
   countries: "".concat(host, "/excursions/countries"),
@@ -27,6 +28,7 @@ var endpoints = Object.freeze({
   getCity: "".concat(host, "/geo/city"),
   getCategory: "".concat(host, "/excursions/category"),
   getLocationsInfo: "".concat(host, "/excursions/locations_info"),
-  getAgencies: "".concat(otpusk, "/excursions/agency")
+  getAgencies: "".concat(exportOtpusk, "/excursions/agency"),
+  sendExcursionOrder: "".concat(otpusk, "/tour/order")
 });
 exports.endpoints = endpoints;
