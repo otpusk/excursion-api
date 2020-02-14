@@ -20,7 +20,7 @@ const endpoints = Object.freeze({
     getCity:            `${host}/geo/city`,
     getCategory:        `${host}/excursions/category`,
     getLocationsInfo:   `${host}/excursions/locations_info`,
-    getAgencies:        `${otpusk}/excursions/agency`,
+    getAgencies:        `${otpusk}/excursion/agency`,
     sendExcursionOrder: `${otpusk}/tour/order`,
 });
 

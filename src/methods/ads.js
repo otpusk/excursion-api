@@ -1,7 +1,7 @@
 import { endpoints } from '../config';
 import { call } from '../fn';
 
-export async function getAgencies ({ token, params }) {
+export async function getAgencies (params) {
 
     /*
      * Алгоритм нормализации агенств с эндпоинта export.otpusk.com/api/escursions/agency
@@ -28,7 +28,7 @@ export async function getAgencies ({ token, params }) {
      * город - обьект офиса, поле сity
     */
 
-    const rawData = await call(endpoints.getAgencies, { query: { ...params, 'access_token': token }, jsonp: true });
+    const rawData = await call(endpoints.getAgencies, { body: params });
 
     const offices =
         // take all operators
