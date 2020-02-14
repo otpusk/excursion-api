@@ -28,7 +28,7 @@ var endpoints = Object.freeze({
   getCity: "".concat(host, "/geo/city"),
   getCategory: "".concat(host, "/excursions/category"),
   getLocationsInfo: "".concat(host, "/excursions/locations_info"),
-  getAgencies: "".concat(exportOtpusk, "/excursions/agency"),
+  getAgencies: "".concat(otpusk, "/excursions/agency"),
   sendExcursionOrder: "".concat(otpusk, "/tour/order")
 });
 exports.endpoints = endpoints;
