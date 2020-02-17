@@ -93,6 +93,12 @@ Object.defineProperty(exports, "getCity", {
     return _geo.getCity;
   }
 });
+Object.defineProperty(exports, "getShowplace", {
+  enumerable: true,
+  get: function get() {
+    return _geo.getShowplace;
+  }
+});
 Object.defineProperty(exports, "getCategory", {
   enumerable: true,
   get: function get() {

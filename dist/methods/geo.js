@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getCountry = getCountry;
 exports.getCity = getCity;
+exports.getShowplace = getShowplace;
 
 var _config = require("../config");
 
@@ -72,4 +73,39 @@ function _getCity() {
     }, _callee2);
   }));
   return _getCity.apply(this, arguments);
+}
+
+function getShowplace(_x4) {
+  return _getShowplace.apply(this, arguments);
+}
+
+function _getShowplace() {
+  _getShowplace = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee3(alias) {
+    var data;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return (0, _fn.call)(_config.endpoints.getShowplace, {
+              body: true,
+              query: {
+                alias: alias
+              }
+            });
+
+          case 2:
+            data = _context3.sent;
+            return _context3.abrupt("return", data);
+
+          case 4:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _getShowplace.apply(this, arguments);
 }

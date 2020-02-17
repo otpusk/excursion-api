@@ -12,3 +12,9 @@ export async function getCity (countryAlias, cityAlias) {
 
     return data;
 }
+
+export async function getShowplace (alias) {
+    const data = await call(endpoints.getShowplace, { body: true, query: { alias }});
+
+    return data;
+}

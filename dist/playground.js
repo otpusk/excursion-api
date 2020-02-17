@@ -14,31 +14,32 @@ function _main() {
   _main = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
-    var data;
+    var showplace;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return (0, _index.getExcursion)(70125);
+            return (0, _index.getShowplace)('/excursion/france/parizh/showplace-the-louvre/');
 
           case 3:
-            data = _context.sent;
-            _context.next = 9;
+            showplace = _context.sent;
+            console.log(showplace);
+            _context.next = 10;
             break;
 
-          case 6:
-            _context.prev = 6;
+          case 7:
+            _context.prev = 7;
             _context.t0 = _context["catch"](0);
             console.log(_context.t0);
 
-          case 9:
+          case 10:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 6]]);
+    }, _callee, null, [[0, 7]]);
   }));
   return _main.apply(this, arguments);
 }
