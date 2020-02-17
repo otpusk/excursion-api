@@ -1,12 +1,19 @@
 import {
-    getShowplace
+    getAgencies
 } from './index.js';
+
+import FormData from 'form-data';
 
 async function main () {
     try {
-        const showplace = await getShowplace('/excursion/france/parizh/showplace-the-louvre/');
+        const params = { cruiseId: 67935, operatorId: 641, date: '2020-03-07', variantId: 20721297 };
+        const formdata = new FormData();
 
-        console.log(showplace);
+        formdata.append('s', JSON.stringify(params));
+
+        const agencies = await getAgencies(formdata);
+
+        console.log(agencies);
     } catch (err) {
         console.log(err);
     }

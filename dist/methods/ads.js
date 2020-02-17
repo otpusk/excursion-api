@@ -29,7 +29,7 @@ function _getAgencies() {
   _getAgencies = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee(params) {
-    var rawData, offices, regions;
+    var rawData, offices, regions, analytics;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -113,12 +113,14 @@ function _getAgencies() {
               });
             });
             regions = rawData.regions;
+            analytics = rawData._gaq;
             return _context.abrupt("return", {
               offices: offices,
-              regions: regions
+              regions: regions,
+              analytics: analytics
             });
 
-          case 6:
+          case 7:
           case "end":
             return _context.stop();
         }

@@ -80,6 +80,7 @@ export async function getAgencies (params) {
             });
 
     const regions = rawData.regions;
+    const analytics = rawData._gaq;
 
-    return { offices, regions };
+    return { offices, regions, analytics };
 }
