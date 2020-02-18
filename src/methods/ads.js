@@ -44,7 +44,17 @@ export async function getAgencies (params) {
                 // return array of offices with proper normalizing
 
                 return Object.values(agency.offices).map((office) => {
-                    const { rn: district = null, address = null, lat, lng, facade = null, workingTime = null, zoom = null, officeId, city = null } = office;
+                    const {
+                        rn: district = null,
+                        address = null,
+                        lat,
+                        lng,
+                        image: facade = null,
+                        workingTime = null,
+                        zoom = null,
+                        officeId,
+                        city = null,
+                    } = office;
 
                     const rawContacts = [
                         { phone: office.fPhone1, hasViber: office.phoneViber1 || false },
