@@ -13,8 +13,8 @@ export async function getCity (countryAlias, cityAlias) {
     return data;
 }
 
-export async function getShowplace (alias) {
-    const data = await call(endpoints.getShowplace, { body: true, query: { alias }});
+export async function getShowplace ({ country, city, showplace }) {
+    const data = await call(endpoints.getShowplace, { body: true, query: { country, city, showplace }});
 
     return data;
 }

@@ -18,7 +18,7 @@ const endpoints = Object.freeze({
     getExcursion:       `${host}/excursions/get_excursion`,
     getCountry:         `${host}/geo/country`,
     getCity:            `${host}/geo/city`,
-    getShowplace:       `${host}/excursions/showplaces_by_category`,
+    getShowplace:       `${host}/excursions/showplace`,
     getCategory:        `${host}/excursions/category`,
     getLocationsInfo:   `${host}/excursions/locations_info`,
     getAgencies:        `${otpusk}/excursion/agency`,

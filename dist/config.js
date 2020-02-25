@@ -26,7 +26,7 @@ var endpoints = Object.freeze({
   getExcursion: "".concat(host, "/excursions/get_excursion"),
   getCountry: "".concat(host, "/geo/country"),
   getCity: "".concat(host, "/geo/city"),
-  getShowplace: "".concat(host, "/excursions/showplaces_by_category"),
+  getShowplace: "".concat(host, "/excursions/showplace"),
   getCategory: "".concat(host, "/excursions/category"),
   getLocationsInfo: "".concat(host, "/excursions/locations_info"),
   getAgencies: "".concat(otpusk, "/excursion/agency"),

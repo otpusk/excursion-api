@@ -82,25 +82,28 @@ function getShowplace(_x4) {
 function _getShowplace() {
   _getShowplace = _asyncToGenerator(
   /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee3(alias) {
-    var data;
+  regeneratorRuntime.mark(function _callee3(_ref) {
+    var country, city, showplace, data;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            _context3.next = 2;
+            country = _ref.country, city = _ref.city, showplace = _ref.showplace;
+            _context3.next = 3;
             return (0, _fn.call)(_config.endpoints.getShowplace, {
               body: true,
               query: {
-                alias: alias
+                country: country,
+                city: city,
+                showplace: showplace
               }
             });
 
-          case 2:
+          case 3:
             data = _context3.sent;
             return _context3.abrupt("return", data);
 
-          case 4:
+          case 5:
           case "end":
             return _context3.stop();
         }
