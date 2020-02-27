@@ -1,12 +1,11 @@
 import {
-    getShowplace
+    getExcursion
 } from './index.js';
 
 async function main () {
-    const test = { country: 'france', city: 'parizh', showplace: 'luvr' };
-    const data = await getShowplace(test);
+    const tour = await getExcursion(65491);
 
-    console.log(data);
+    console.log(tour);
 }
 
 main();

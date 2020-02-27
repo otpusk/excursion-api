@@ -14,24 +14,19 @@ function _main() {
   _main = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
-    var test, data;
+    var tour;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            test = {
-              country: 'france',
-              city: 'parizh',
-              showplace: 'luvr'
-            };
-            _context.next = 3;
-            return (0, _index.getShowplace)(test);
+            _context.next = 2;
+            return (0, _index.getExcursion)(65491);
 
-          case 3:
-            data = _context.sent;
-            console.log(data);
+          case 2:
+            tour = _context.sent;
+            console.log(tour);
 
-          case 5:
+          case 4:
           case "end":
             return _context.stop();
         }

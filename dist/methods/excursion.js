@@ -11,6 +11,8 @@ var _fn = require("../fn");
 
 var _helpers = require("../helpers");
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -23,8 +25,7 @@ function _getExcursion() {
   _getExcursion = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee(excursion) {
-    var tour, _tour$excursion, _tour$excursion$descr, description, _tour$excursion$days, days, _tour$excursion$showp, showplaces;
-
+    var tour, sanitizeStringProperties;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -34,30 +35,28 @@ function _getExcursion() {
 
           case 2:
             tour = _context.sent;
-            // escaping unsafe characters in html response
-            _tour$excursion = tour.excursion, _tour$excursion$descr = _tour$excursion.description, description = _tour$excursion$descr === void 0 ? {} : _tour$excursion$descr, _tour$excursion$days = _tour$excursion.days, days = _tour$excursion$days === void 0 ? [] : _tour$excursion$days, _tour$excursion$showp = _tour$excursion.showplaces, showplaces = _tour$excursion$showp === void 0 ? [] : _tour$excursion$showp;
-            description && Object.keys(description).forEach(function (key) {
-              if (description[key]) {
-                description[key] = (0, _helpers.escapeHtml)(description[key]);
-              }
-            });
-            showplaces && showplaces.forEach(function (_ref, index) {
-              var showplaceDescription = _ref.description;
 
-              if (showplaceDescription) {
-                showplaces[index].description = (0, _helpers.escapeHtml)(showplaceDescription);
-              }
-            });
-            days && days.forEach(function (day) {
-              Object.keys(day).forEach(function (key) {
-                if (typeof day[key] === 'string') {
-                  day[key] = (0, _helpers.escapeHtml)(day[key]);
+            // escaping unsafe characters in html response
+            sanitizeStringProperties = function sanitizeStringProperties(obj) {
+              Object.keys(obj).forEach(function (key) {
+                if (!obj[key]) {
+                  return;
+                }
+
+                if (typeof obj[key] === 'string') {
+                  obj[key] = (0, _helpers.escapeHtml)(obj[key]);
+                }
+
+                if (_typeof(obj[key]) === 'object') {
+                  sanitizeStringProperties(obj[key]);
                 }
               });
-            });
-            return _context.abrupt("return", tour);
+              return obj;
+            };
 
-          case 8:
+            return _context.abrupt("return", sanitizeStringProperties(tour));
+
+          case 5:
           case "end":
             return _context.stop();
         }
