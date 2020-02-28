@@ -20,11 +20,11 @@ function _main() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _index.getExcursion)(65491);
+            return (0, _index.getExcursion)(69864);
 
           case 2:
             tour = _context.sent;
-            console.log(tour);
+            console.log(tour.excursion.days);
 
           case 4:
           case "end":

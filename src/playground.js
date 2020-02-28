@@ -3,9 +3,9 @@ import {
 } from './index.js';
 
 async function main () {
-    const tour = await getExcursion(65491);
+    const tour = await getExcursion(69864);
 
-    console.log(tour);
+    console.log(tour.excursion.days);
 }
 
 main();
