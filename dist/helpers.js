@@ -8,19 +8,13 @@ exports.escapeHtml = escapeHtml;
 function escapeHtml(unsafe) {
   var unsafeCharacters = [{
     "char": '\r\n',
-    unicode: '&lt;br&gt;'
+    unicode: '<br />'
   }, {
     "char": '\n',
-    unicode: '&lt;br&gt;'
+    unicode: '<br />'
   }, {
     "char": '&',
     unicode: '&amp;'
-  }, {
-    "char": '<',
-    unicode: '&lt;'
-  }, {
-    "char": '>',
-    unicode: '&gt;'
   }, {
     "char": '\"',
     unicode: '&quot;'

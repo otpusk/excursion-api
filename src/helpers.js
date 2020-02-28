@@ -1,10 +1,8 @@
 export function escapeHtml (unsafe) {
     const unsafeCharacters = [
-        { char: '\r\n', unicode: '&lt;br&gt;' },
-        { char: '\n', unicode: '&lt;br&gt;' },
+        { char: '\r\n', unicode: '<br />' },
+        { char: '\n', unicode: '<br />' },
         { char: '&', unicode: '&amp;' },
-        { char: '<', unicode: '&lt;' },
-        { char: '>', unicode: '&gt;' },
         { char: '\"', unicode: '&quot;' },
         { char: "\'", unicode: '&#039;' },
         { char: '«', unicode: '&#171;' },
