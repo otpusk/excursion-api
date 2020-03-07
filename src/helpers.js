@@ -26,6 +26,7 @@ export function parseExcursions (excursions) {
             id = "",
             length = null,
             departureCity : { nameInGenitiveCase : departureCity = '' } = {},
+            transport = null,
         } = excursion;
 
         let coverPhoto = null;
@@ -76,6 +77,7 @@ export function parseExcursions (excursions) {
             destinations,
             mainCategory,
             departureCity,
+            transport,
         };
     });
 }

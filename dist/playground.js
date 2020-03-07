@@ -24,9 +24,8 @@ function _main() {
 
           case 2:
             mp = _context.sent;
-            console.log(JSON.stringify(mp));
 
-          case 4:
+          case 3:
           case "end":
             return _context.stop();
         }

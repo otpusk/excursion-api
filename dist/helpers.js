@@ -75,7 +75,9 @@ function parseExcursions(excursions) {
         _excursion$departureC = excursion.departureCity;
     _excursion$departureC = _excursion$departureC === void 0 ? {} : _excursion$departureC;
     var _excursion$departureC2 = _excursion$departureC.nameInGenitiveCase,
-        departureCity = _excursion$departureC2 === void 0 ? '' : _excursion$departureC2;
+        departureCity = _excursion$departureC2 === void 0 ? '' : _excursion$departureC2,
+        _excursion$transport = excursion.transport,
+        transport = _excursion$transport === void 0 ? null : _excursion$transport;
     var coverPhoto = null;
 
     var _excursionCategories$ = excursionCategories.filter(function (_ref2) {
@@ -130,7 +132,8 @@ function parseExcursions(excursions) {
       price: price,
       destinations: destinations,
       mainCategory: mainCategory,
-      departureCity: departureCity
+      departureCity: departureCity,
+      transport: transport
     };
   });
 }
