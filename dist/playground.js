@@ -14,17 +14,17 @@ function _main() {
   _main = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
-    var tour;
+    var mp;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _index.getExcursion)(69864);
+            return (0, _index.getMainpage)();
 
           case 2:
-            tour = _context.sent;
-            console.log(tour.excursion.days);
+            mp = _context.sent;
+            console.log(JSON.stringify(mp));
 
           case 4:
           case "end":

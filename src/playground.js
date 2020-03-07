@@ -3,7 +3,9 @@ import {
 } from './index.js';
 
 async function main () {
-    await getMainpage();
+    const mp = await getMainpage();
+
+    console.log(JSON.stringify(mp));
 }
 
 main();

@@ -5,13 +5,13 @@ import { parseExcursions } from "../helpers";
 export async function getMainpage () {
     const data = await call(endpoints.mainpage);
 
-    data.forEach((section) => {
+    return data.map((section) => {
         const sectionType = section.showOptions.sqType;
 
         if (sectionType === 'excursion_1' || sectionType === 'excursion_2') {
             section.mainPageExcursions = parseExcursions(section.mainPageExcursions);
         }
-    });
 
-    return data;
+        return section;
+    });
 }
