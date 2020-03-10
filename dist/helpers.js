@@ -30,7 +30,7 @@ function escapeHtml(unsafe) {
     "char": "\n",
     unicode: "<br />"
   }, {
-    "char": "\\",
+    "char": "\\\\",
     unicode: ''
   }, {
     "char": "&",
