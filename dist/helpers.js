@@ -50,6 +50,12 @@ function escapeHtml(unsafe) {
   }, {
     "char": "»",
     unicode: "&#187;"
+  }, {
+    "char": '„',
+    unicode: "&quot;"
+  }, {
+    "char": '	',
+    unicode: ' '
   }];
   return unsafeCharacters.reduce(function (acc, _ref) {
     var _char = _ref["char"],
