@@ -1,11 +1,11 @@
 import {
-    getMainpage
+    getExcursion
 } from './index.js';
 
 async function main () {
-    const mp = await getMainpage();
+    const excursion = await getExcursion(69711);
 
-    console.log(JSON.stringify(mp));
+    console.log(excursion);
 }
 
 main();

@@ -14,18 +14,19 @@ function _main() {
   _main = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee() {
-    var mp;
+    var excursion;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _index.getMainpage)();
+            return (0, _index.getExcursion)(69711);
 
           case 2:
-            mp = _context.sent;
+            excursion = _context.sent;
+            console.log(excursion);
 
-          case 3:
+          case 4:
           case "end":
             return _context.stop();
         }
