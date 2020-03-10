@@ -39,6 +39,9 @@ function escapeHtml(unsafe) {
     "char": '“',
     unicode: "&quot;"
   }, {
+    "char": '”',
+    unicode: "&quot;"
+  }, {
     "char": "'",
     unicode: "&#039;"
   }, {

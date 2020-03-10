@@ -5,6 +5,7 @@ export function escapeHtml (unsafe) {
         { char: "&", unicode: "&amp;" },
         { char: '"', unicode: "&quot;" },
         { char: '“', unicode: "&quot;" },
+        { char: '”', unicode: "&quot;" },
         { char: "'", unicode: "&#039;" },
         { char: "«", unicode: "&#171;" },
         { char: "»", unicode: "&#187;" }
