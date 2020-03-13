@@ -111,6 +111,30 @@ Object.defineProperty(exports, "sendExcursionOrder", {
     return _order.sendExcursionOrder;
   }
 });
+Object.defineProperty(exports, "getCountryMeta", {
+  enumerable: true,
+  get: function get() {
+    return _meta.getCountryMeta;
+  }
+});
+Object.defineProperty(exports, "getCityMeta", {
+  enumerable: true,
+  get: function get() {
+    return _meta.getCityMeta;
+  }
+});
+Object.defineProperty(exports, "getShowplaceMeta", {
+  enumerable: true,
+  get: function get() {
+    return _meta.getShowplaceMeta;
+  }
+});
+Object.defineProperty(exports, "getExcursionMeta", {
+  enumerable: true,
+  get: function get() {
+    return _meta.getExcursionMeta;
+  }
+});
 
 var _mainpage = require("./methods/mainpage");
 
@@ -131,3 +155,5 @@ var _geo = require("./methods/geo");
 var _category = require("./methods/category");
 
 var _order = require("./methods/order");
+
+var _meta = require("./methods/meta");

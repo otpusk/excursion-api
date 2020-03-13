@@ -20,7 +20,7 @@ function _main() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _index.getExcursion)(70440);
+            return (0, _index.getExcursionMeta)(68558);
 
           case 2:
             excursion = _context.sent;

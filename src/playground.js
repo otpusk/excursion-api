@@ -1,9 +1,9 @@
 import {
-    getExcursion
+    getExcursionMeta
 } from './index.js';
 
 async function main () {
-    const excursion = await getExcursion(70440);
+    const excursion = await getExcursionMeta(68558);
 
     console.log(excursion);
 }

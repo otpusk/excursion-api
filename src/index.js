@@ -11,3 +11,9 @@ export { getAgencies } from './methods/ads';
 export { getCountry, getCity, getShowplace } from './methods/geo';
 export { getCategory } from './methods/category';
 export { sendExcursionOrder } from './methods/order';
+export {
+    getCountryMeta,
+    getCityMeta,
+    getShowplaceMeta,
+    getExcursionMeta
+} from './methods/meta';
