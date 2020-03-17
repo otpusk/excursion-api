@@ -89,7 +89,12 @@ export async function getAgencies (params) {
                 });
             });
 
-    const regions = rawData.regions;
+    const regions = rawData.regions.reduce((store, region) => {
+        store[region.regionId] = region;
+
+        return store;
+    }, {});
+
     const analytics = rawData._gaq;
 
     return { offices, regions, analytics };

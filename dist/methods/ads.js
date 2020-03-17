@@ -112,7 +112,10 @@ function _getAgencies() {
                 };
               });
             });
-            regions = rawData.regions;
+            regions = rawData.regions.reduce(function (store, region) {
+              store[region.regionId] = region;
+              return store;
+            }, {});
             analytics = rawData._gaq;
             return _context.abrupt("return", {
               offices: offices,
