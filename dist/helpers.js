@@ -73,10 +73,8 @@ function parseExcursions(excursions) {
         excursionCategories = _excursion$excursionC === void 0 ? [] : _excursion$excursionC,
         _excursion$excursionD = excursion.excursionDestinations,
         excursionDestinations = _excursion$excursionD === void 0 ? [] : _excursion$excursionD,
-        _excursion$prices = excursion.prices;
-    _excursion$prices = _excursion$prices === void 0 ? {} : _excursion$prices;
-    var _excursion$prices$uah = _excursion$prices.uah,
-        price = _excursion$prices$uah === void 0 ? null : _excursion$prices$uah,
+        _excursion$prices = excursion.prices,
+        prices = _excursion$prices === void 0 ? {} : _excursion$prices,
         _excursion$images = excursion.images,
         images = _excursion$images === void 0 ? [] : _excursion$images,
         _excursion$title = excursion.title,
@@ -144,7 +142,7 @@ function parseExcursions(excursions) {
       titleTranslit: titleTranslit,
       excursionId: id,
       length: length,
-      price: price,
+      prices: prices,
       destinations: destinations,
       mainCategory: mainCategory,
       departureCity: departureCity,
