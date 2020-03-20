@@ -24,7 +24,7 @@ export function parseExcursions (excursions) {
         const {
             excursionCategories = [],
             excursionDestinations = [],
-            prices: { uah: price = null } = {},
+            prices = {},
             images = [],
             title = "",
             titleTranslit = "",
@@ -78,7 +78,7 @@ export function parseExcursions (excursions) {
             titleTranslit,
             excursionId: id,
             length,
-            price,
+            prices,
             destinations,
             mainCategory,
             departureCity,
