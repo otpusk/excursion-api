@@ -135,6 +135,12 @@ Object.defineProperty(exports, "getExcursionMeta", {
     return _meta.getExcursionMeta;
   }
 });
+Object.defineProperty(exports, "getTransportExcursionMeta", {
+  enumerable: true,
+  get: function get() {
+    return _meta.getTransportExcursionMeta;
+  }
+});
 
 var _mainpage = require("./methods/mainpage");
 

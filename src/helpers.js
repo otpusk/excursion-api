@@ -20,69 +20,73 @@ export function escapeHtml (unsafe) {
 }
 
 export function parseExcursions (excursions) {
-    return excursions.map((excursion) => {
-        const {
-            excursionCategories = [],
-            excursionDestinations = [],
-            prices = {},
-            images = [],
-            title = "",
-            titleTranslit = "",
-            id = "",
-            length = null,
-            departureCity : { nameInGenitiveCase : departureCity = '' } = {},
-            transport = null,
-        } = excursion;
+    if (excursions && Array.isArray(excursions)) {
+        return excursions.map((excursion) => {
+            const {
+                excursionCategories = [],
+                excursionDestinations = [],
+                prices = {},
+                images = [],
+                title = "",
+                titleTranslit = "",
+                id = "",
+                length = null,
+                departureCity : { nameInGenitiveCase : departureCity = '' } = {},
+                transport = null,
+            } = excursion;
 
-        let coverPhoto = null;
+            let coverPhoto = null;
 
-        const [mainCategory] = excursionCategories
-            .filter(({ priority }) => priority > 0)
-            .sort(({ priority: a }, { priority: b }) => a - b)
-            .map((category) => {
-                const {
-                    name = "",
-                    showOptions: { iconSmall: icon = null } = {},
-                } = category;
+            const [mainCategory] = excursionCategories
+                .filter(({ priority }) => priority > 0)
+                .sort(({ priority: a }, { priority: b }) => a - b)
+                .map((category) => {
+                    const {
+                        name = "",
+                        showOptions: { iconSmall: icon = null } = {},
+                    } = category;
 
-                return {
-                    name,
-                    icon,
-                };
-            });
+                    return {
+                        name,
+                        icon,
+                    };
+                });
 
-        const destinations = [
-            ...new Set(
-                excursionDestinations
-                    .sort(
-                        ({ city: { priority: p1 = 0 }}, { city: { priority: p2 = 0 }}) =>
-                            p2 - p1
-                    )
-                    .map(({ city }) => city.name)
-            )
-        ];
+            const destinations = [
+                ...new Set(
+                    excursionDestinations
+                        .sort(
+                            ({ city: { priority: p1 = 0 }}, { city: { priority: p2 = 0 }}) =>
+                                p2 - p1
+                        )
+                        .map(({ city }) => city.name)
+                )
+            ];
 
-        if (images && images.length && images[0].thumbs) {
-            const appropriatePhoto = images[0].thumbs.find((ph) =>
-                ph.format.endsWith("desktop_card")
-            );
+            if (images && images.length && images[0].thumbs) {
+                const appropriatePhoto = images[0].thumbs.find((ph) =>
+                    ph.format.endsWith("desktop_card")
+                );
 
-            if (appropriatePhoto && appropriatePhoto.url) {
-                coverPhoto = appropriatePhoto.url;
+                if (appropriatePhoto && appropriatePhoto.url) {
+                    coverPhoto = appropriatePhoto.url;
+                }
             }
-        }
 
-        return {
-            coverPhoto,
-            title,
-            titleTranslit,
-            excursionId: id,
-            length,
-            prices,
-            destinations,
-            mainCategory,
-            departureCity,
-            transport,
-        };
-    });
+            return {
+                coverPhoto,
+                title,
+                titleTranslit,
+                excursionId: id,
+                length,
+                prices,
+                destinations,
+                mainCategory,
+                departureCity,
+                transport,
+            };
+        });
+    }
+
+    return [];
 }

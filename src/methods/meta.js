@@ -24,3 +24,9 @@ export async function getExcursionMeta (excursionId) {
 
     return data;
 }
+
+export async function getTransportExcursionMeta (params) {
+    const data = await call(endpoints.transportExcursionMeta, { query: params });
+
+    return data;
+}

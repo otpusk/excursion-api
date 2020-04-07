@@ -15,5 +15,6 @@ export {
     getCountryMeta,
     getCityMeta,
     getShowplaceMeta,
-    getExcursionMeta
+    getExcursionMeta,
+    getTransportExcursionMeta
 } from './methods/meta';

@@ -68,85 +68,89 @@ function escapeHtml(unsafe) {
 }
 
 function parseExcursions(excursions) {
-  return excursions.map(function (excursion) {
-    var _excursion$excursionC = excursion.excursionCategories,
-        excursionCategories = _excursion$excursionC === void 0 ? [] : _excursion$excursionC,
-        _excursion$excursionD = excursion.excursionDestinations,
-        excursionDestinations = _excursion$excursionD === void 0 ? [] : _excursion$excursionD,
-        _excursion$prices = excursion.prices,
-        prices = _excursion$prices === void 0 ? {} : _excursion$prices,
-        _excursion$images = excursion.images,
-        images = _excursion$images === void 0 ? [] : _excursion$images,
-        _excursion$title = excursion.title,
-        title = _excursion$title === void 0 ? "" : _excursion$title,
-        _excursion$titleTrans = excursion.titleTranslit,
-        titleTranslit = _excursion$titleTrans === void 0 ? "" : _excursion$titleTrans,
-        _excursion$id = excursion.id,
-        id = _excursion$id === void 0 ? "" : _excursion$id,
-        _excursion$length = excursion.length,
-        length = _excursion$length === void 0 ? null : _excursion$length,
-        _excursion$departureC = excursion.departureCity;
-    _excursion$departureC = _excursion$departureC === void 0 ? {} : _excursion$departureC;
-    var _excursion$departureC2 = _excursion$departureC.nameInGenitiveCase,
-        departureCity = _excursion$departureC2 === void 0 ? '' : _excursion$departureC2,
-        _excursion$transport = excursion.transport,
-        transport = _excursion$transport === void 0 ? null : _excursion$transport;
-    var coverPhoto = null;
+  if (excursions && Array.isArray(excursions)) {
+    return excursions.map(function (excursion) {
+      var _excursion$excursionC = excursion.excursionCategories,
+          excursionCategories = _excursion$excursionC === void 0 ? [] : _excursion$excursionC,
+          _excursion$excursionD = excursion.excursionDestinations,
+          excursionDestinations = _excursion$excursionD === void 0 ? [] : _excursion$excursionD,
+          _excursion$prices = excursion.prices,
+          prices = _excursion$prices === void 0 ? {} : _excursion$prices,
+          _excursion$images = excursion.images,
+          images = _excursion$images === void 0 ? [] : _excursion$images,
+          _excursion$title = excursion.title,
+          title = _excursion$title === void 0 ? "" : _excursion$title,
+          _excursion$titleTrans = excursion.titleTranslit,
+          titleTranslit = _excursion$titleTrans === void 0 ? "" : _excursion$titleTrans,
+          _excursion$id = excursion.id,
+          id = _excursion$id === void 0 ? "" : _excursion$id,
+          _excursion$length = excursion.length,
+          length = _excursion$length === void 0 ? null : _excursion$length,
+          _excursion$departureC = excursion.departureCity;
+      _excursion$departureC = _excursion$departureC === void 0 ? {} : _excursion$departureC;
+      var _excursion$departureC2 = _excursion$departureC.nameInGenitiveCase,
+          departureCity = _excursion$departureC2 === void 0 ? '' : _excursion$departureC2,
+          _excursion$transport = excursion.transport,
+          transport = _excursion$transport === void 0 ? null : _excursion$transport;
+      var coverPhoto = null;
 
-    var _excursionCategories$ = excursionCategories.filter(function (_ref2) {
-      var priority = _ref2.priority;
-      return priority > 0;
-    }).sort(function (_ref3, _ref4) {
-      var a = _ref3.priority;
-      var b = _ref4.priority;
-      return a - b;
-    }).map(function (category) {
-      var _category$name = category.name,
-          name = _category$name === void 0 ? "" : _category$name,
-          _category$showOptions = category.showOptions;
-      _category$showOptions = _category$showOptions === void 0 ? {} : _category$showOptions;
-      var _category$showOptions2 = _category$showOptions.iconSmall,
-          icon = _category$showOptions2 === void 0 ? null : _category$showOptions2;
-      return {
-        name: name,
-        icon: icon
-      };
-    }),
-        _excursionCategories$2 = _slicedToArray(_excursionCategories$, 1),
-        mainCategory = _excursionCategories$2[0];
+      var _excursionCategories$ = excursionCategories.filter(function (_ref2) {
+        var priority = _ref2.priority;
+        return priority > 0;
+      }).sort(function (_ref3, _ref4) {
+        var a = _ref3.priority;
+        var b = _ref4.priority;
+        return a - b;
+      }).map(function (category) {
+        var _category$name = category.name,
+            name = _category$name === void 0 ? "" : _category$name,
+            _category$showOptions = category.showOptions;
+        _category$showOptions = _category$showOptions === void 0 ? {} : _category$showOptions;
+        var _category$showOptions2 = _category$showOptions.iconSmall,
+            icon = _category$showOptions2 === void 0 ? null : _category$showOptions2;
+        return {
+          name: name,
+          icon: icon
+        };
+      }),
+          _excursionCategories$2 = _slicedToArray(_excursionCategories$, 1),
+          mainCategory = _excursionCategories$2[0];
 
-    var destinations = _toConsumableArray(new Set(excursionDestinations.sort(function (_ref5, _ref6) {
-      var _ref5$city$priority = _ref5.city.priority,
-          p1 = _ref5$city$priority === void 0 ? 0 : _ref5$city$priority;
-      var _ref6$city$priority = _ref6.city.priority,
-          p2 = _ref6$city$priority === void 0 ? 0 : _ref6$city$priority;
-      return p2 - p1;
-    }).map(function (_ref7) {
-      var city = _ref7.city;
-      return city.name;
-    })));
+      var destinations = _toConsumableArray(new Set(excursionDestinations.sort(function (_ref5, _ref6) {
+        var _ref5$city$priority = _ref5.city.priority,
+            p1 = _ref5$city$priority === void 0 ? 0 : _ref5$city$priority;
+        var _ref6$city$priority = _ref6.city.priority,
+            p2 = _ref6$city$priority === void 0 ? 0 : _ref6$city$priority;
+        return p2 - p1;
+      }).map(function (_ref7) {
+        var city = _ref7.city;
+        return city.name;
+      })));
 
-    if (images && images.length && images[0].thumbs) {
-      var appropriatePhoto = images[0].thumbs.find(function (ph) {
-        return ph.format.endsWith("desktop_card");
-      });
+      if (images && images.length && images[0].thumbs) {
+        var appropriatePhoto = images[0].thumbs.find(function (ph) {
+          return ph.format.endsWith("desktop_card");
+        });
 
-      if (appropriatePhoto && appropriatePhoto.url) {
-        coverPhoto = appropriatePhoto.url;
+        if (appropriatePhoto && appropriatePhoto.url) {
+          coverPhoto = appropriatePhoto.url;
+        }
       }
-    }
 
-    return {
-      coverPhoto: coverPhoto,
-      title: title,
-      titleTranslit: titleTranslit,
-      excursionId: id,
-      length: length,
-      prices: prices,
-      destinations: destinations,
-      mainCategory: mainCategory,
-      departureCity: departureCity,
-      transport: transport
-    };
-  });
+      return {
+        coverPhoto: coverPhoto,
+        title: title,
+        titleTranslit: titleTranslit,
+        excursionId: id,
+        length: length,
+        prices: prices,
+        destinations: destinations,
+        mainCategory: mainCategory,
+        departureCity: departureCity,
+        transport: transport
+      };
+    });
+  }
+
+  return [];
 }

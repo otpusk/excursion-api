@@ -34,6 +34,7 @@ var endpoints = Object.freeze({
   countryMeta: "".concat(host, "/seo/country"),
   cityMeta: "".concat(host, "/seo/city"),
   showplaceMeta: "".concat(host, "/seo/showplace"),
-  excursionMeta: "".concat(host, "/seo/excursion")
+  excursionMeta: "".concat(host, "/seo/excursion"),
+  transportExcursionMeta: "".concat(host, "/seo/excursions/getall")
 });
 exports.endpoints = endpoints;
