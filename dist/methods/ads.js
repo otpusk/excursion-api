@@ -41,7 +41,7 @@ function _getAgencies() {
 
           case 2:
             rawData = _context.sent;
-            offices = // take all operators
+            offices = rawData && rawData.operators ? // take all operators
             Object.values(rawData.operators) // return list of all agencies from viewAgencies and clickAgencies
             .flatMap(function (operator) {
               return [].concat(_toConsumableArray(Object.values(operator.viewAgencies)), _toConsumableArray(Object.values(operator.clickAgencies)));
@@ -111,11 +111,11 @@ function _getAgencies() {
                   agencyLogo: "https://www.otpusk.com/logos/".concat(agencyLogo)
                 };
               });
-            });
-            regions = rawData.regions.reduce(function (store, region) {
+            }) : [];
+            regions = rawData && rawData.regions ? rawData.regions.reduce(function (store, region) {
               store[region.regionId] = region;
               return store;
-            }, {});
+            }, {}) : {};
             analytics = rawData._gaq;
             return _context.abrupt("return", {
               offices: offices,

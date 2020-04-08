@@ -89,11 +89,11 @@ export async function getAgencies (params) {
                 });
             }) : [];
 
-    const regions = rawData.regions.reduce((store, region) => {
+    const regions = rawData && rawData.regions ? rawData.regions.reduce((store, region) => {
         store[region.regionId] = region;
 
         return store;
-    }, {});
+    }, {}) : {};
 
     const analytics = rawData._gaq;
 
