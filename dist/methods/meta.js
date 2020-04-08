@@ -7,6 +7,7 @@ exports.getCountryMeta = getCountryMeta;
 exports.getCityMeta = getCityMeta;
 exports.getShowplaceMeta = getShowplaceMeta;
 exports.getExcursionMeta = getExcursionMeta;
+exports.getTransportExcursionMeta = getTransportExcursionMeta;
 
 var _config = require("../config");
 
@@ -138,4 +139,36 @@ function _getExcursionMeta() {
     }, _callee4);
   }));
   return _getExcursionMeta.apply(this, arguments);
+}
+
+function getTransportExcursionMeta(_x6) {
+  return _getTransportExcursionMeta.apply(this, arguments);
+}
+
+function _getTransportExcursionMeta() {
+  _getTransportExcursionMeta = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee5(params) {
+    var data;
+    return regeneratorRuntime.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return (0, _fn.call)(_config.endpoints.transportExcursionMeta, {
+              query: params
+            });
+
+          case 2:
+            data = _context5.sent;
+            return _context5.abrupt("return", data);
+
+          case 4:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+  return _getTransportExcursionMeta.apply(this, arguments);
 }

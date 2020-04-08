@@ -1,15 +1,9 @@
 import {
-    getTransportExcursionMeta
+    getExcursion
 } from './index.js';
 
 async function main () {
-    const data = await getTransportExcursionMeta({
-        transport: 'bus',
-        country:   'spain',
-        city:      'madrid',
-    });
-
-    console.log(data);
+    const data = await getExcursion(68658);
 }
 
 main();

@@ -30,7 +30,7 @@ export async function getAgencies (params) {
 
     const rawData = await call(endpoints.getAgencies, { body: params });
 
-    const offices =
+    const offices = rawData && rawData.operators ?
         // take all operators
         Object.values(rawData.operators)
             // return list of all agencies from viewAgencies and clickAgencies
@@ -87,7 +87,7 @@ export async function getAgencies (params) {
                         agencyLogo: `https://www.otpusk.com/logos/${agencyLogo}`,
                     };
                 });
-            });
+            }) : [];
 
     const regions = rawData.regions.reduce((store, region) => {
         store[region.regionId] = region;

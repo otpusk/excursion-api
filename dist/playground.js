@@ -20,17 +20,12 @@ function _main() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _index.getTransportExcursionMeta)({
-              transport: 'bus',
-              country: 'spain',
-              city: 'madrid'
-            });
+            return (0, _index.getExcursion)(68658);
 
           case 2:
             data = _context.sent;
-            console.log(data);
 
-          case 4:
+          case 3:
           case "end":
             return _context.stop();
         }
