@@ -31,7 +31,7 @@ export function parseExcursions (excursions) {
                 titleTranslit = "",
                 id = "",
                 length = null,
-                departureCity : { nameInGenitiveCase : departureCity = '' } = {},
+                departureCity,
                 transport = null,
             } = excursion;
 
@@ -77,12 +77,12 @@ export function parseExcursions (excursions) {
                 coverPhoto,
                 title,
                 titleTranslit,
-                excursionId: id,
+                excursionId:   id,
                 length,
                 prices,
                 destinations,
                 mainCategory,
-                departureCity,
+                departureCity: departureCity ? departureCity.nameInGenitiveCase : '',
                 transport,
             };
         });

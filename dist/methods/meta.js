@@ -22,9 +22,7 @@ function getCountryMeta(_x) {
 }
 
 function _getCountryMeta() {
-  _getCountryMeta = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(countryAlias) {
+  _getCountryMeta = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(countryAlias) {
     var data;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -52,9 +50,7 @@ function getCityMeta(_x2, _x3) {
 }
 
 function _getCityMeta() {
-  _getCityMeta = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee2(countryAlias, cityAlias) {
+  _getCityMeta = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(countryAlias, cityAlias) {
     var data;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
@@ -82,9 +78,7 @@ function getShowplaceMeta(_x4) {
 }
 
 function _getShowplaceMeta() {
-  _getShowplaceMeta = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee3(showplaceId) {
+  _getShowplaceMeta = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(showplaceId) {
     var data;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
@@ -116,9 +110,7 @@ function getExcursionMeta(_x5) {
 }
 
 function _getExcursionMeta() {
-  _getExcursionMeta = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee4(excursionId) {
+  _getExcursionMeta = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(excursionId) {
     var data;
     return regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
@@ -146,9 +138,7 @@ function getTransportExcursionMeta(_x6) {
 }
 
 function _getTransportExcursionMeta() {
-  _getTransportExcursionMeta = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee5(params) {
+  _getTransportExcursionMeta = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(params) {
     var data;
     return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {

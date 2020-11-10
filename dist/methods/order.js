@@ -18,9 +18,7 @@ function sendExcursionOrder(_x) {
 }
 
 function _sendExcursionOrder() {
-  _sendExcursionOrder = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(order) {
+  _sendExcursionOrder = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(order) {
     var response;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {

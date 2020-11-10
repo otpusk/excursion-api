@@ -22,9 +22,7 @@ function getFilterDeparture() {
 }
 
 function _getFilterDeparture() {
-  _getFilterDeparture = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee() {
+  _getFilterDeparture = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     var cities;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -52,9 +50,7 @@ function getFilterTransport() {
 }
 
 function _getFilterTransport() {
-  _getFilterTransport = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee2() {
+  _getFilterTransport = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
     var transport;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
@@ -82,9 +78,7 @@ function getFilterCategories() {
 }
 
 function _getFilterCategories() {
-  _getFilterCategories = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee3() {
+  _getFilterCategories = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
     var categories;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
@@ -112,9 +106,7 @@ function getFilterPrice() {
 }
 
 function _getFilterPrice() {
-  _getFilterPrice = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee4() {
+  _getFilterPrice = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
     var prices;
     return regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
@@ -142,9 +134,7 @@ function getFilterOperators() {
 }
 
 function _getFilterOperators() {
-  _getFilterOperators = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee5() {
+  _getFilterOperators = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
     var operators;
     return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {

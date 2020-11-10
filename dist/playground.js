@@ -11,9 +11,7 @@ function main() {
 }
 
 function _main() {
-  _main = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee() {
+  _main = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     var data;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {

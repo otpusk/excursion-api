@@ -19,9 +19,7 @@ function getSearch(_x) {
 }
 
 function _getSearch() {
-  _getSearch = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(query) {
+  _getSearch = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(query) {
     var tours;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -51,9 +49,7 @@ function getSearchCount(_x2) {
 }
 
 function _getSearchCount() {
-  _getSearchCount = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee2(query) {
+  _getSearchCount = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(query) {
     var searchCount;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {

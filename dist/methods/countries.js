@@ -18,9 +18,7 @@ function getCountries() {
 }
 
 function _getCountries() {
-  _getCountries = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee() {
+  _getCountries = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     var data;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {

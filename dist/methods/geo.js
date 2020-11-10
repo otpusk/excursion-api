@@ -20,9 +20,7 @@ function getCountry(_x) {
 }
 
 function _getCountry() {
-  _getCountry = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(alias) {
+  _getCountry = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(alias) {
     var data;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -50,9 +48,7 @@ function getCity(_x2, _x3) {
 }
 
 function _getCity() {
-  _getCity = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee2(countryAlias, cityAlias) {
+  _getCity = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(countryAlias, cityAlias) {
     var data;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
@@ -80,9 +76,7 @@ function getShowplace(_x4) {
 }
 
 function _getShowplace() {
-  _getShowplace = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee3(_ref) {
+  _getShowplace = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(_ref) {
     var country, city, showplace, data;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {

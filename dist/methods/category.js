@@ -18,9 +18,7 @@ function getCategory(_x) {
 }
 
 function _getCategory() {
-  _getCategory = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(alias) {
+  _getCategory = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(alias) {
     var data;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {

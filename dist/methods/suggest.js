@@ -19,9 +19,7 @@ function getSuggest() {
 }
 
 function _getSuggest() {
-  _getSuggest = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee() {
+  _getSuggest = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     var word,
         data,
         _args = arguments;
@@ -56,9 +54,7 @@ function getLocationsInfo(_x) {
 }
 
 function _getLocationsInfo() {
-  _getLocationsInfo = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee2(_ref) {
+  _getLocationsInfo = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(_ref) {
     var _ref$countries, countries, _ref$cities, cities, _ref$sights, sights, data;
 
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
