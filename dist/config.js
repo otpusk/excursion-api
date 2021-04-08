@@ -9,8 +9,8 @@ var _jsCookie = _interopRequireDefault(require("js-cookie"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var host = _jsCookie["default"].get('excursion-api-host') || 'https://new.otpusk.com/api'; // const exportOtpusk = 'https://export.otpusk.com/api';
-
+var host = _jsCookie["default"].get('excursion-api-host') || 'https://new.otpusk.com/api';
+var exportOtpusk = _jsCookie["default"].get('api-host') || 'https://export.otpusk.com/api';
 var otpusk = 'https://www.otpusk.com';
 var endpoints = Object.freeze({
   mainpage: "".concat(host, "/excursions/mainpage"),
@@ -29,7 +29,7 @@ var endpoints = Object.freeze({
   getShowplace: "".concat(host, "/excursions/showplace"),
   getCategory: "".concat(host, "/excursions/category"),
   getLocationsInfo: "".concat(host, "/excursions/locations_info"),
-  getAgencies: "".concat(otpusk, "/excursion/agency"),
+  getAgencies: "".concat(exportOtpusk, "/excursion/agency"),
   sendExcursionOrder: "".concat(otpusk, "/tour/order"),
   countryMeta: "".concat(host, "/seo/country"),
   cityMeta: "".concat(host, "/seo/city"),
