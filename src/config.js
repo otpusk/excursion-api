@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 
 const host = Cookies.get('excursion-api-host') || 'https://new.otpusk.com/api';
-// const exportOtpusk = 'https://export.otpusk.com/api';
+const exportOtpusk = Cookies.get('api-host') || 'https://export.otpusk.com/api';
 const otpusk = 'https://www.otpusk.com';
 
 const endpoints = Object.freeze({
@@ -21,7 +21,7 @@ const endpoints = Object.freeze({
     getShowplace:           `${host}/excursions/showplace`,
     getCategory:            `${host}/excursions/category`,
     getLocationsInfo:       `${host}/excursions/locations_info`,
-    getAgencies:            `${otpusk}/excursion/agency`,
+    getAgencies:            `${exportOtpusk}/excursion/agency`,
     sendExcursionOrder:     `${otpusk}/tour/order`,
     countryMeta:            `${host}/seo/country`,
     cityMeta:               `${host}/seo/city`,
