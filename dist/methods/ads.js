@@ -37,7 +37,7 @@ function getAgencies(_x, _x2) {
 
 function _getAgencies() {
   _getAgencies = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(query, token) {
-    var rawData, offices, regions, analytics;
+    var rawData, offices, regions;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -124,14 +124,12 @@ function _getAgencies() {
               store[region.regionId] = region;
               return store;
             }, {}) : {};
-            analytics = rawData._gaq;
             return _context.abrupt("return", {
               offices: offices,
-              regions: regions,
-              analytics: analytics
+              regions: regions
             });
 
-          case 7:
+          case 6:
           case "end":
             return _context.stop();
         }
