@@ -95,7 +95,6 @@ export async function getAgencies (query, token) {
         return store;
     }, {}) : {};
 
-    const analytics = rawData._gaq;
 
-    return { offices, regions, analytics };
+    return { offices, regions };
 }
