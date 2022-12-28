@@ -7,9 +7,6 @@ export async function getAgencies (query, token) {
      * Алгоритм нормализации агенств с эндпоинта export.otpusk.com/api/escursions/agency
      *
      * Нужно получить массив объектов офисов
-     * В ответе эндпоинта в поле operators есть два поля - clickAgencies и
-     * viewAgencies. Это два объекта в которых значения полей - это
-     * агенства. В них есть поля offices - объекты офисов.
      *
      * Название для офиса берём из - объекта агенства, поле title
      * advertId - обьект агенства
@@ -33,9 +30,8 @@ export async function getAgencies (query, token) {
     const offices = rawData && rawData.operators ?
         // take all operators
         Object.values(rawData.operators)
-            // return list of all agencies from viewAgencies and clickAgencies
             .flatMap((operator) => {
-                return [...Object.values(operator.viewAgencies), ...Object.values(operator.clickAgencies)];
+                return Object.values(operator.viewAgencies);
             })
             // return list of all offices
             .flatMap((agency) => {
