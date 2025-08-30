@@ -1,7 +1,7 @@
-import Cookies from 'js-cookie';
-
-const host = Cookies.get('excursion-api-host') || 'https://new.otpusk.com/api';
-const exportOtpusk = Cookies.get('api-host') || 'https://export.otpusk.com/api';
+const host =  process.env.LOCAL_ENV
+    ? '/api'
+    : process.env.ENV === "production" ? 'https://new.otpusk.com/api' : 'https://new.staging.otpusk.com/api';
+const exportOtpusk = 'https://export.otpusk.com/api';
 const otpusk = 'https://www.otpusk.com';
 
 const endpoints = Object.freeze({
@@ -29,5 +29,7 @@ const endpoints = Object.freeze({
     excursionMeta:          `${host}/seo/excursion`,
     transportExcursionMeta: `${host}/seo/excursions/getall`,
 });
+
+console.log(endpoints);
 
 export { endpoints };

@@ -4,13 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.endpoints = void 0;
-
-var _jsCookie = _interopRequireDefault(require("js-cookie"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var host = _jsCookie["default"].get('excursion-api-host') || 'https://new.otpusk.com/api';
-var exportOtpusk = _jsCookie["default"].get('api-host') || 'https://export.otpusk.com/api';
+var host = process.env.LOCAL_ENV ? '/api' : process.env.ENV === "production" ? 'https://new.otpusk.com/api' : 'https://new.staging.otpusk.com/api';
+var exportOtpusk = 'https://export.otpusk.com/api';
 var otpusk = 'https://www.otpusk.com';
 var endpoints = Object.freeze({
   mainpage: "".concat(host, "/excursions/mainpage"),
@@ -38,3 +33,4 @@ var endpoints = Object.freeze({
   transportExcursionMeta: "".concat(host, "/seo/excursions/getall")
 });
 exports.endpoints = endpoints;
+console.log(endpoints);
