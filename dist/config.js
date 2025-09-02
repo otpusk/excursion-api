@@ -33,4 +33,3 @@ var endpoints = Object.freeze({
   transportExcursionMeta: "".concat(host, "/seo/excursions/getall")
 });
 exports.endpoints = endpoints;
-console.log(endpoints);

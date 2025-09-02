@@ -47,10 +47,14 @@ async function call (endpoint, { query = {}, body = null, jsonp = false } = {}) 
     const request = `${endpoint}?${createQueryStringFromObject(query)}`;
 
     const fetchfn = jsonp ? fetchJsonp : fetch;
+    const credentials = Buffer.from('dev:dev').toString('base64');
 
     const response = await fetchfn(request, {
-        method: body ? 'POST' : 'GET',
+        method:  body ? 'POST' : 'GET',
         body,
+        headers: {
+            ...process.env.ENV === 'staging' && { 'Authorization': `Basic ${credentials}` },
+        },
     });
 
     if (response.status >= 300) {

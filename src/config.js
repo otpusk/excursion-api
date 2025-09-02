@@ -30,6 +30,4 @@ const endpoints = Object.freeze({
     transportExcursionMeta: `${host}/seo/excursions/getall`,
 });
 
-console.log(endpoints);
-
 export { endpoints };
