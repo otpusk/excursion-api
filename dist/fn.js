@@ -11,12 +11,6 @@ var _fetchJsonp = _interopRequireDefault(require("fetch-jsonp"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -117,7 +111,6 @@ function _call() {
         jsonp,
         request,
         fetchfn,
-        credentials,
         response,
         data,
         _args = arguments;
@@ -129,35 +122,31 @@ function _call() {
             _ref9 = _args.length > 1 && _args[1] !== undefined ? _args[1] : {}, _ref9$query = _ref9.query, query = _ref9$query === void 0 ? {} : _ref9$query, _ref9$body = _ref9.body, body = _ref9$body === void 0 ? null : _ref9$body, _ref9$jsonp = _ref9.jsonp, jsonp = _ref9$jsonp === void 0 ? false : _ref9$jsonp;
             request = "".concat(endpoint, "?").concat(createQueryStringFromObject(query));
             fetchfn = jsonp ? _fetchJsonp["default"] : _isomorphicFetch["default"];
-            credentials = Buffer.from('dev:dev').toString('base64');
-            _context.next = 6;
+            _context.next = 5;
             return fetchfn(request, {
               method: body ? 'POST' : 'GET',
-              body: body,
-              headers: _objectSpread({}, process.env.ENV === 'staging' && {
-                'Authorization': "Basic ".concat(credentials)
-              })
+              body: body
             });
 
-          case 6:
+          case 5:
             response = _context.sent;
 
             if (!(response.status >= 300)) {
-              _context.next = 9;
+              _context.next = 8;
               break;
             }
 
             throw new Error("Error while performing request ".concat(endpoint));
 
-          case 9:
-            _context.next = 11;
+          case 8:
+            _context.next = 10;
             return response.json();
 
-          case 11:
+          case 10:
             data = _context.sent;
             return _context.abrupt("return", data);
 
-          case 13:
+          case 12:
           case "end":
             return _context.stop();
         }
