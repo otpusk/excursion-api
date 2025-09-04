@@ -19,8 +19,8 @@ export async function getShowplaceMeta (showplaceId) {
     return data;
 }
 
-export async function getExcursionMeta (excursionId) {
-    const data = await call(`${endpoints.excursionMeta}/${excursionId}`);
+export async function getExcursionMeta (excursionId, query) {
+    const data = await call(`${endpoints.excursionMeta}/${excursionId}`, { query });
 
     return data;
 }

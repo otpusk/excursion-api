@@ -15,19 +15,21 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function getCountry(_x) {
+function getCountry(_x, _x2) {
   return _getCountry.apply(this, arguments);
 }
 
 function _getCountry() {
-  _getCountry = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(alias) {
+  _getCountry = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(alias, query) {
     var data;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _fn.call)("".concat(_config.endpoints.getCountry, "/").concat(alias));
+            return (0, _fn.call)("".concat(_config.endpoints.getCountry, "/").concat(alias), {
+              query: query
+            });
 
           case 2:
             data = _context.sent;
@@ -43,19 +45,21 @@ function _getCountry() {
   return _getCountry.apply(this, arguments);
 }
 
-function getCity(_x2, _x3) {
+function getCity(_x3, _x4, _x5) {
   return _getCity.apply(this, arguments);
 }
 
 function _getCity() {
-  _getCity = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(countryAlias, cityAlias) {
+  _getCity = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(countryAlias, cityAlias, query) {
     var data;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return (0, _fn.call)("".concat(_config.endpoints.getCity, "/").concat(countryAlias, "/").concat(cityAlias));
+            return (0, _fn.call)("".concat(_config.endpoints.getCity, "/").concat(countryAlias, "/").concat(cityAlias), {
+              query: query
+            });
 
           case 2:
             data = _context2.sent;
@@ -71,33 +75,28 @@ function _getCity() {
   return _getCity.apply(this, arguments);
 }
 
-function getShowplace(_x4) {
+function getShowplace(_x6) {
   return _getShowplace.apply(this, arguments);
 }
 
 function _getShowplace() {
-  _getShowplace = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(_ref) {
-    var country, city, showplace, data;
+  _getShowplace = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(query) {
+    var data;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            country = _ref.country, city = _ref.city, showplace = _ref.showplace;
-            _context3.next = 3;
+            _context3.next = 2;
             return (0, _fn.call)(_config.endpoints.getShowplace, {
               body: true,
-              query: {
-                country: country,
-                city: city,
-                showplace: showplace
-              }
+              query: query
             });
 
-          case 3:
+          case 2:
             data = _context3.sent;
             return _context3.abrupt("return", data);
 
-          case 5:
+          case 4:
           case "end":
             return _context3.stop();
         }

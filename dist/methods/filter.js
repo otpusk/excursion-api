@@ -17,19 +17,21 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function getFilterDeparture() {
+function getFilterDeparture(_x) {
   return _getFilterDeparture.apply(this, arguments);
 }
 
 function _getFilterDeparture() {
-  _getFilterDeparture = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+  _getFilterDeparture = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(query) {
     var cities;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _fn.call)(_config.endpoints.filterDeparture);
+            return (0, _fn.call)(_config.endpoints.filterDeparture, {
+              query: query
+            });
 
           case 2:
             cities = _context.sent;
@@ -45,19 +47,21 @@ function _getFilterDeparture() {
   return _getFilterDeparture.apply(this, arguments);
 }
 
-function getFilterTransport() {
+function getFilterTransport(_x2) {
   return _getFilterTransport.apply(this, arguments);
 }
 
 function _getFilterTransport() {
-  _getFilterTransport = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+  _getFilterTransport = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(query) {
     var transport;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return (0, _fn.call)(_config.endpoints.filterTransport);
+            return (0, _fn.call)(_config.endpoints.filterTransport, {
+              query: query
+            });
 
           case 2:
             transport = _context2.sent;
@@ -73,19 +77,21 @@ function _getFilterTransport() {
   return _getFilterTransport.apply(this, arguments);
 }
 
-function getFilterCategories() {
+function getFilterCategories(_x3) {
   return _getFilterCategories.apply(this, arguments);
 }
 
 function _getFilterCategories() {
-  _getFilterCategories = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+  _getFilterCategories = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(query) {
     var categories;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.next = 2;
-            return (0, _fn.call)(_config.endpoints.filterCategories);
+            return (0, _fn.call)(_config.endpoints.filterCategories, {
+              query: query
+            });
 
           case 2:
             categories = _context3.sent;
@@ -101,19 +107,21 @@ function _getFilterCategories() {
   return _getFilterCategories.apply(this, arguments);
 }
 
-function getFilterPrice() {
+function getFilterPrice(_x4) {
   return _getFilterPrice.apply(this, arguments);
 }
 
 function _getFilterPrice() {
-  _getFilterPrice = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+  _getFilterPrice = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(query) {
     var prices;
     return regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
             _context4.next = 2;
-            return (0, _fn.call)(_config.endpoints.filterPrice);
+            return (0, _fn.call)(_config.endpoints.filterPrice, {
+              query: query
+            });
 
           case 2:
             prices = _context4.sent;
@@ -129,19 +137,21 @@ function _getFilterPrice() {
   return _getFilterPrice.apply(this, arguments);
 }
 
-function getFilterOperators() {
+function getFilterOperators(_x5) {
   return _getFilterOperators.apply(this, arguments);
 }
 
 function _getFilterOperators() {
-  _getFilterOperators = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+  _getFilterOperators = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(query) {
     var operators;
     return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
             _context5.next = 2;
-            return (0, _fn.call)(_config.endpoints.filterOperators);
+            return (0, _fn.call)(_config.endpoints.filterOperators, {
+              query: query
+            });
 
           case 2:
             operators = _context5.sent;

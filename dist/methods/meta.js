@@ -105,19 +105,21 @@ function _getShowplaceMeta() {
   return _getShowplaceMeta.apply(this, arguments);
 }
 
-function getExcursionMeta(_x5) {
+function getExcursionMeta(_x5, _x6) {
   return _getExcursionMeta.apply(this, arguments);
 }
 
 function _getExcursionMeta() {
-  _getExcursionMeta = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(excursionId) {
+  _getExcursionMeta = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(excursionId, query) {
     var data;
     return regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
             _context4.next = 2;
-            return (0, _fn.call)("".concat(_config.endpoints.excursionMeta, "/").concat(excursionId));
+            return (0, _fn.call)("".concat(_config.endpoints.excursionMeta, "/").concat(excursionId), {
+              query: query
+            });
 
           case 2:
             data = _context4.sent;
@@ -133,7 +135,7 @@ function _getExcursionMeta() {
   return _getExcursionMeta.apply(this, arguments);
 }
 
-function getTransportExcursionMeta(_x6) {
+function getTransportExcursionMeta(_x7) {
   return _getTransportExcursionMeta.apply(this, arguments);
 }
 

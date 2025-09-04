@@ -2,8 +2,8 @@ import { endpoints } from '../config';
 import { call } from '../fn';
 import { parseExcursions } from "../helpers";
 
-export async function getMainpage () {
-    const data = await call(endpoints.mainpage);
+export async function getMainpage (query) {
+    const data = await call(endpoints.mainpage, { query });
 
     return data.map((section) => {
         const sectionType = section.showOptions.sqType;

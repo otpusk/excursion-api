@@ -2,8 +2,8 @@ import { endpoints } from '../config';
 import { call } from '../fn';
 import { escapeHtml } from '../helpers';
 
-export async function getExcursion (excursion) {
-    const tour = await call(`${endpoints.getExcursion}/${excursion}`);
+export async function getExcursion (excursion, query) {
+    const tour = await call(`${endpoints.getExcursion}/${excursion}`, { query });
 
     // escaping unsafe characters in html response
     const sanitizeStringProperties = (obj) => {
