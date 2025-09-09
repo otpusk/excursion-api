@@ -6,7 +6,7 @@ export {
     getFilterPrice, getFilterOperators
 } from './methods/filter';
 export { getExcursion } from './methods/excursion';
-export { getSearch, getSearchCount } from './methods/search';
+export { getSearch } from './methods/search';
 export { getAgencies } from './methods/ads';
 export { getCountry, getCity, getShowplace } from './methods/geo';
 export { getCategory } from './methods/category';
@@ -14,7 +14,6 @@ export { sendExcursionOrder } from './methods/order';
 export {
     getCountryMeta,
     getCityMeta,
-    getShowplaceMeta,
     getExcursionMeta,
     getTransportExcursionMeta
 } from './methods/meta';

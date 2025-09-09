@@ -14,7 +14,6 @@ const endpoints = Object.freeze({
     filterPrice:            `${host}/excursions/filter/price`,
     filterOperators:        `${host}/excursions/filter/operators`,
     search:                 `${host}/excursions/search`,
-    searchCount:            `${host}/excursions/searchcount`,
     getExcursion:           `${host}/excursions/get_excursion`,
     getCountry:             `${host}/geo/country`,
     getCity:                `${host}/geo/city`,
@@ -25,7 +24,6 @@ const endpoints = Object.freeze({
     sendExcursionOrder:     `${otpusk}/tour/order`,
     countryMeta:            `${host}/seo/country`,
     cityMeta:               `${host}/seo/city`,
-    showplaceMeta:          `${host}/seo/showplace`,
     excursionMeta:          `${host}/seo/excursion`,
     transportExcursionMeta: `${host}/seo/excursions/getall`,
 });

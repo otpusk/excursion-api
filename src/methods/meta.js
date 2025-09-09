@@ -13,12 +13,6 @@ export async function getCityMeta (countryAlias, cityAlias) {
     return data;
 }
 
-export async function getShowplaceMeta (showplaceId) {
-    const data = await call(endpoints.showplaceMeta, { query: { showplaceId }});
-
-    return data;
-}
-
 export async function getExcursionMeta (excursionId, query) {
     const data = await call(`${endpoints.excursionMeta}/${excursionId}`, { query });
 
