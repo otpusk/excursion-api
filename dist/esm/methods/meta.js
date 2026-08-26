@@ -1,0 +1,22 @@
+import { endpoints } from '../config';
+import { call } from '../fn';
+export async function getCountryMeta(countryAlias) {
+  const data = await call(`${endpoints.countryMeta}/${countryAlias}`);
+  return data;
+}
+export async function getCityMeta(countryAlias, cityAlias) {
+  const data = await call(`${endpoints.cityMeta}/${countryAlias}/${cityAlias}`);
+  return data;
+}
+export async function getExcursionMeta(excursionId, query) {
+  const data = await call(`${endpoints.excursionMeta}/${excursionId}`, {
+    query
+  });
+  return data;
+}
+export async function getTransportExcursionMeta(params) {
+  const data = await call(endpoints.transportExcursionMeta, {
+    query: params
+  });
+  return data;
+}
